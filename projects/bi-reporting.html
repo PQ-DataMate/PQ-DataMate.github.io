@@ -1,0 +1,1276 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="BI & Reporting portfolio — CRM reporting, sales pipeline dashboards, reporting automation, Power BI and shipment-level TMS and SAP analysis.">
+
+  <title>BI & Reporting | PQ — Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --surface: #111419;
+      --surface-light: #171b21;
+      --text: #f2f3f5;
+      --muted: #a0a6b0;
+      --line: #2b3038;
+      --accent: #c5d5ef;
+      --max-width: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero {
+      padding: 100px 0 76px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1.06;
+      letter-spacing: -.055em;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      margin: 28px 0 0;
+      color: #bdc2ca;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .pill {
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      color: #c5cad2;
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(27px, 4vw, 39px);
+      line-height: 1.2;
+      letter-spacing: -.035em;
+      font-weight: 600;
+    }
+
+    .section-heading > p:last-child {
+      max-width: 720px;
+      margin: 15px 0 0;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .panel {
+      min-width: 0;
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .panel p {
+      margin: 0;
+      color: #b7bdc6;
+      font-size: 14px;
+    }
+
+    .panel ul {
+      margin: 16px 0 0;
+      padding-left: 18px;
+      color: #b7bdc6;
+      font-size: 13px;
+    }
+
+    .panel li + li {
+      margin-top: 7px;
+    }
+
+    .number {
+      display: block;
+      margin-bottom: 12px;
+      color: #d7e2f3;
+      font-size: 11px;
+      letter-spacing: .13em;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .workflow-step {
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .workflow-step strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .workflow-step span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .arrow {
+      color: #8290a4;
+    }
+
+    /* Illustrative dashboard mockups */
+
+    .mockup {
+      margin-top: 28px;
+      overflow: hidden;
+      border: 1px solid #343a44;
+      background: #101318;
+    }
+
+    .mockup-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 18px;
+      border-bottom: 1px solid #343a44;
+      background: #171b21;
+    }
+
+    .mockup-title {
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .mockup-subtitle {
+      color: #929ba8;
+      font-size: 10px;
+    }
+
+    .mockup-body {
+      padding: 20px;
+    }
+
+    .mockup-note {
+      margin-top: 12px;
+      color: #929ba8;
+      font-size: 10px;
+      line-height: 1.6;
+    }
+
+    .metric-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .metric {
+      min-width: 0;
+      padding: 14px;
+      border: 1px solid #2b3038;
+      background: #15191f;
+    }
+
+    .metric-label {
+      display: block;
+      color: #a0a6b0;
+      font-size: 10px;
+    }
+
+    .metric-value {
+      display: block;
+      margin-top: 7px;
+      font-size: clamp(17px, 2.4vw, 26px);
+      font-weight: 600;
+      letter-spacing: -.03em;
+    }
+
+    .metric-detail {
+      display: block;
+      margin-top: 5px;
+      color: #929ba8;
+      font-size: 10px;
+    }
+
+    .visual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .visual-card {
+      min-width: 0;
+      padding: 16px;
+      border: 1px solid #2b3038;
+      background: #15191f;
+    }
+
+    .visual-title {
+      margin-bottom: 15px;
+      color: #d5dae2;
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    .bar-row {
+      display: grid;
+      grid-template-columns: minmax(70px, 1fr) minmax(0, 2fr) 35px;
+      gap: 8px;
+      align-items: center;
+      margin: 12px 0;
+      font-size: 10px;
+    }
+
+    .bar-label {
+      overflow: hidden;
+      color: #b5bdc8;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .bar-track {
+      height: 7px;
+      overflow: hidden;
+      background: #292e37;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: #b9cce9;
+    }
+
+    .bar-value {
+      color: #dce2ea;
+      text-align: right;
+    }
+
+    .stage-list {
+      display: grid;
+      gap: 9px;
+    }
+
+    .stage-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #292e37;
+      color: #b5bdc8;
+      font-size: 11px;
+    }
+
+    .stage-row strong {
+      color: #e2e6ed;
+      font-weight: 600;
+    }
+
+    .table-wrap {
+      margin-top: 14px;
+      overflow-x: auto;
+      border: 1px solid #2b3038;
+    }
+
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 10px;
+      white-space: nowrap;
+    }
+
+    .data-table th {
+      padding: 12px 11px;
+      background: #1b222b;
+      color: #dce2ea;
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .data-table td {
+      padding: 11px;
+      border-top: 1px solid #2b3038;
+      color: #b5bdc8;
+    }
+
+    .data-table tr:nth-child(even) td {
+      background: #14181e;
+    }
+
+    .positive {
+      color: #d5e4f8 !important;
+    }
+
+    .bi-kpis {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .bi-kpi {
+      padding: 15px;
+      border: 1px solid #2b3038;
+      background: #15191f;
+    }
+
+    .bi-kpi span {
+      display: block;
+      color: #a0a6b0;
+      font-size: 10px;
+    }
+
+    .bi-kpi strong {
+      display: block;
+      margin-top: 7px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .trend-chart {
+      display: flex;
+      align-items: end;
+      gap: 9px;
+      height: 130px;
+      padding: 12px 8px 0;
+      border-bottom: 1px solid #343a44;
+    }
+
+    .trend-column {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: end;
+      height: 100%;
+      gap: 6px;
+    }
+
+    .trend-bar {
+      width: min(100%, 28px);
+      min-height: 4px;
+      background: #a9c4e8;
+    }
+
+    .trend-label {
+      color: #929ba8;
+      font-size: 9px;
+    }
+
+    .details-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 30px;
+    }
+
+    .detail-item {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail-item h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .detail-item p {
+      margin: 0;
+      color: #b7bdc6;
+      font-size: 13px;
+    }
+
+    .callout {
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .callout p {
+      margin: 0;
+      color: #c1c6ce;
+    }
+
+    .callout p + p {
+      margin-top: 12px;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 25px;
+    }
+
+    .skill {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      color: #c5cad2;
+      font-size: 11px;
+    }
+
+    .bottom-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 34px 0;
+    }
+
+    .back-link {
+      color: #d9dde3;
+      font-size: 13px;
+    }
+
+    .back-link span {
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 22px 0 36px;
+      color: #777f8a;
+      font-size: 11px;
+    }
+
+    @media (max-width: 700px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 15px;
+      }
+
+      .hero {
+        padding: 68px 0 52px;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .grid-2,
+      .visual-grid,
+      .details-list {
+        grid-template-columns: 1fr;
+      }
+
+      .workflow {
+        grid-template-columns: 1fr;
+      }
+
+      .metric-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .bi-kpis {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .panel {
+        padding: 21px;
+      }
+
+      .mockup-body {
+        padding: 12px;
+      }
+
+      .bottom-nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="../index.html">PQ / PORTFOLIO</a>
+
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="knowledge-hub.html">01 Knowledge Hub</a>
+      <a href="crm-migration.html">02 CRM Migration</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="container">
+      <p class="eyebrow">03 / BI & Reporting</p>
+
+      <h1>Turning business data into actionable insight.</h1>
+
+      <p class="hero-description">
+        Independently building reporting solutions across CRM and business
+        intelligence environments — from sales pipeline dashboards and
+        automated reporting workflows to shipment-level operational and
+        financial analysis.
+      </p>
+
+      <div class="hero-meta">
+        <span class="pill">CRM Reporting</span>
+        <span class="pill">Power BI</span>
+        <span class="pill">TMS & SAP</span>
+        <span class="pill">Reporting Automation</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- OVERVIEW -->
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">01 / Overview</p>
+        <h2>Reporting built around business needs.</h2>
+        <p>
+          My work covered the full reporting process: identifying useful
+          information, defining report logic, selecting fields and filters,
+          structuring dashboards and making information available to the
+          people who needed it.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="panel">
+          <span class="number">01 / CRM</span>
+          <h3>Sales performance & pipeline</h3>
+          <p>
+            Reporting on opportunities, sales stages, leads, activities
+            and closed business, supporting sales teams and management.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="number">02 / BI</span>
+          <h3>Operations & profitability</h3>
+          <p>
+            Connecting shipment-level operational details with revenue,
+            costs and gross profit to build a more complete view of
+            customer performance.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ORACLE SALES CLOUD -->
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">02 / Oracle Sales Cloud</p>
+        <h2>Reporting built from the ground up.</h2>
+        <p>
+          Independently developed reports, dashboards and automated
+          reporting workflows without formal training or dedicated IT
+          support. I learned through testing, troubleshooting and
+          iterating until the solutions worked as intended.
+        </p>
+      </div>
+
+      <div class="details-list">
+        <article class="detail-item">
+          <h3>Sales pipeline reporting</h3>
+          <p>
+            Reports covering open and closed opportunities, sales stages,
+            recently closed business, pipeline status and sales leads.
+          </p>
+        </article>
+
+        <article class="detail-item">
+          <h3>Sales activity reporting</h3>
+          <p>
+            Visibility into sales activities, including visits, phone
+            calls, quotations and other customer-related interactions.
+          </p>
+        </article>
+
+        <article class="detail-item">
+          <h3>Automated notifications</h3>
+          <p>
+            Configured reporting agents and conditions, including
+            notifications to opportunity owners when opportunities
+            became overdue.
+          </p>
+        </article>
+
+        <article class="detail-item">
+          <h3>Scheduled reporting</h3>
+          <p>
+            Set up Friday end-of-week reports for sales users and
+            Monday morning reporting for managers preparing for
+            weekly board meetings.
+          </p>
+        </article>
+      </div>
+
+      <!-- Illustrative CRM dashboard -->
+      <div class="mockup">
+        <div class="mockup-top">
+          <div>
+            <div class="mockup-title">SALES PIPELINE OVERVIEW</div>
+            <div class="mockup-subtitle">Illustrative dashboard concept</div>
+          </div>
+          <div class="mockup-subtitle">Opportunities · Activities · Leads</div>
+        </div>
+
+        <div class="mockup-body">
+          <div class="metric-grid">
+            <div class="metric">
+              <span class="metric-label">Open opportunities</span>
+              <span class="metric-value">Pipeline</span>
+              <span class="metric-detail">Open sales opportunities</span>
+            </div>
+
+            <div class="metric">
+              <span class="metric-label">Closed opportunities</span>
+              <span class="metric-value">Results</span>
+              <span class="metric-detail">Closed business</span>
+            </div>
+
+            <div class="metric">
+              <span class="metric-label">Sales activities</span>
+              <span class="metric-value">Activity</span>
+              <span class="metric-detail">Visits · Calls · Quotations</span>
+            </div>
+          </div>
+
+          <div class="visual-grid">
+            <div class="visual-card">
+              <div class="visual-title">Pipeline by sales stage</div>
+
+              <div class="stage-list">
+                <div class="stage-row">
+                  <span>Prospecting</span>
+                  <strong>Open opportunities</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Solution Design</span>
+                  <strong>Pipeline stage</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Decision Pending</span>
+                  <strong>Pipeline stage</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Closed</span>
+                  <strong>Closed business</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-card">
+              <div class="visual-title">Reporting workflow</div>
+
+              <div class="stage-list">
+                <div class="stage-row">
+                  <span>Friday</span>
+                  <strong>Weekly user summary</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Monday morning</span>
+                  <strong>Management reports</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Triggered</span>
+                  <strong>Overdue opportunity alerts</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mockup-note">
+            Conceptual illustration of reporting capabilities. This is not
+            a screenshot of the internal CRM or a representation of live data.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DYNAMICS 365 -->
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">03 / Microsoft Dynamics 365</p>
+        <h2>Reporting in the new CRM environment.</h2>
+        <p>
+          Following the transition to Dynamics 365, reporting work
+          continued through CRM views and dashboards, with selected
+          reporting needs also addressed through Power BI.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="panel">
+          <h3>CRM views & dashboards</h3>
+          <p>
+            Using CRM data to monitor opportunities, sales activity,
+            accounts and other day-to-day sales information.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h3>Continuity of reporting</h3>
+          <p>
+            Maintaining visibility of key sales information while
+            working in the new CRM environment and supporting
+            evolving reporting needs.
+          </p>
+        </article>
+      </div>
+
+      <div class="mockup">
+        <div class="mockup-top">
+          <div>
+            <div class="mockup-title">CRM REPORTING WORKSPACE</div>
+            <div class="mockup-subtitle">Illustrative dashboard concept</div>
+          </div>
+          <div class="mockup-subtitle">Accounts · Activities · Opportunities</div>
+        </div>
+
+        <div class="mockup-body">
+          <div class="visual-grid">
+            <div class="visual-card">
+              <div class="visual-title">Sales activity categories</div>
+
+              <div class="bar-row">
+                <span class="bar-label">Phone calls</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 82%;"></div>
+                </div>
+                <span class="bar-value">Calls</span>
+              </div>
+
+              <div class="bar-row">
+                <span class="bar-label">Customer meetings</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 58%;"></div>
+                </div>
+                <span class="bar-value">Meetings</span>
+              </div>
+
+              <div class="bar-row">
+                <span class="bar-label">Virtual meetings</span>
+                <div class="bar-track">
+                  <div class="bar-fill" style="width: 35%;"></div>
+                </div>
+                <span class="bar-value">Virtual</span>
+              </div>
+            </div>
+
+            <div class="visual-card">
+              <div class="visual-title">Opportunity monitoring</div>
+
+              <div class="stage-list">
+                <div class="stage-row">
+                  <span>Open opportunities</span>
+                  <strong>Current pipeline</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Accounts</span>
+                  <strong>Customer records</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Activities</span>
+                  <strong>Recent interactions</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mockup-note">
+            Illustrative visualisation only. Bars are decorative and do not
+            represent actual CRM figures.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERNAL BI / TMS + SAP -->
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">04 / Internal BI · TMS & SAP</p>
+        <h2>From shipment-level detail to customer profitability.</h2>
+        <p>
+          Independently built detailed reports using internal BI data
+          sourced from a Transport Management System (TMS) and SAP
+          financial data. The reporting connected operational shipment
+          records with financial information, then aggregated the details
+          into customer-level views for selected reporting periods.
+        </p>
+      </div>
+
+      <div class="workflow">
+        <div class="workflow-step">
+          <strong>01. Shipment-level data</strong>
+          <span>
+            Individual shipments identified by shipment or consignment
+            number.
+          </span>
+        </div>
+
+        <div class="workflow-step">
+          <strong>02. Operational & financial analysis</strong>
+          <span>
+            Transport details, revenue, surcharges, production costs
+            and gross profit.
+          </span>
+        </div>
+
+        <div class="workflow-step">
+          <strong>03. Customer-level insight</strong>
+          <span>
+            Aggregated performance by customer, quarter or year to date.
+          </span>
+        </div>
+      </div>
+
+      <div class="mockup">
+        <div class="mockup-top">
+          <div>
+            <div class="mockup-title">SHIPMENT & FINANCIAL ANALYSIS</div>
+            <div class="mockup-subtitle">Illustrative data model · TMS + SAP</div>
+          </div>
+          <div class="mockup-subtitle">Shipment detail → Customer view</div>
+        </div>
+
+        <div class="mockup-body">
+          <div class="bi-kpis">
+            <div class="bi-kpi">
+              <span>Shipment details</span>
+              <strong>Operations</strong>
+            </div>
+            <div class="bi-kpi">
+              <span>Transport revenue</span>
+              <strong>Revenue</strong>
+            </div>
+            <div class="bi-kpi">
+              <span>Production costs</span>
+              <strong>Costs</strong>
+            </div>
+            <div class="bi-kpi">
+              <span>Gross profit / margin</span>
+              <strong>Profitability</strong>
+            </div>
+          </div>
+
+          <div class="table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Shipment</th>
+                  <th>Route</th>
+                  <th>Service status</th>
+                  <th>Weight / volume</th>
+                  <th>Revenue</th>
+                  <th>Costs</th>
+                  <th>Gross profit</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Example shipment A</td>
+                  <td>Collection → Delivery</td>
+                  <td>On time</td>
+                  <td>Shipment data</td>
+                  <td>Revenue data</td>
+                  <td>Cost data</td>
+                  <td class="positive">Profit data</td>
+                </tr>
+                <tr>
+                  <td>Example shipment B</td>
+                  <td>Collection → Delivery</td>
+                  <td>Delayed</td>
+                  <td>Shipment data</td>
+                  <td>Revenue data</td>
+                  <td>Cost data</td>
+                  <td class="positive">Profit data</td>
+                </tr>
+                <tr>
+                  <td>Example shipment C</td>
+                  <td>Collection → Delivery</td>
+                  <td>Claim status</td>
+                  <td>Shipment data</td>
+                  <td>Revenue data</td>
+                  <td>Cost data</td>
+                  <td class="positive">Profit data</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="visual-grid">
+            <div class="visual-card">
+              <div class="visual-title">Operational data</div>
+              <div class="stage-list">
+                <div class="stage-row">
+                  <span>Collection & delivery</span>
+                  <strong>Locations / dates</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Goods & shipment</span>
+                  <strong>Weight / volume / pallets</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Service quality</span>
+                  <strong>KPI / delays / claims</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Additional services</span>
+                  <strong>Selected service options</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-card">
+              <div class="visual-title">Financial data</div>
+              <div class="stage-list">
+                <div class="stage-row">
+                  <span>Transport revenue</span>
+                  <strong>Shipment revenue</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Fuel / seasonal / toll charges</span>
+                  <strong>Surcharges</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Production costs</span>
+                  <strong>Shipment costs</strong>
+                </div>
+                <div class="stage-row">
+                  <span>Gross profit & margin</span>
+                  <strong>Profitability metrics</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mockup-note">
+            Illustrative conceptual mockup using generic labels only.
+            It is not a screenshot of the internal BI system, and contains
+            no actual customer, shipment or financial data.
+          </p>
+        </div>
+      </div>
+
+      <div class="details-list">
+        <article class="detail-item">
+          <h3>Shipment-level detail</h3>
+          <p>
+            Collection and delivery locations, dates, shipment identifiers,
+            goods descriptions, dimensions, weight, volume, pallets and
+            packaging information.
+          </p>
+        </article>
+
+        <article class="detail-item">
+          <h3>Revenue and cost components</h3>
+          <p>
+            Transport rates, fuel adjustments, seasonal supplements,
+            toll charges, production costs, gross profit and margin.
+          </p>
+        </article>
+
+        <article class="detail-item">
+          <h3>Service quality</h3>
+          <p>
+            On-time indicators, delays, claims and selected additional
+            services such as fixed-day delivery or special handling.
+          </p>
+        </article>
+
+        <article class="detail-item">
+          <h3>Customer-level aggregation</h3>
+          <p>
+            Combining shipment records into a consolidated view of customer
+            performance over a quarter or year-to-date period, supporting
+            commercial analysis and customer discussions.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- POWER BI -->
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">05 / Power BI</p>
+        <h2>Turning complex data into a clear overview.</h2>
+        <p>
+          Independently created reports and dashboards in Power BI,
+          presenting operational and financial information through
+          visual summaries, tables, maps, trends and KPI views.
+        </p>
+      </div>
+
+      <div class="mockup">
+        <div class="mockup-top">
+          <div>
+            <div class="mockup-title">BUSINESS INTELLIGENCE OVERVIEW</div>
+            <div class="mockup-subtitle">Illustrative Power BI-style concept</div>
+          </div>
+          <div class="mockup-subtitle">Summary · Trends · Geography · Details</div>
+        </div>
+
+        <div class="mockup-body">
+          <div class="bi-kpis">
+            <div class="bi-kpi">
+              <span>Revenue</span>
+              <strong>Trend</strong>
+            </div>
+            <div class="bi-kpi">
+              <span>Shipments</span>
+              <strong>Volume</strong>
+            </div>
+            <div class="bi-kpi">
+              <span>Gross profit</span>
+              <strong>Margin</strong>
+            </div>
+            <div class="bi-kpi">
+              <span>Service quality</span>
+              <strong>KPI status</strong>
+            </div>
+          </div>
+
+          <div class="visual-grid">
+            <div class="visual-card">
+              <div class="visual-title">Trend analysis</div>
+
+              <div class="trend-chart" aria-label="Illustrative monthly trend">
+                <div class="trend-column">
+                  <div class="trend-bar" style="height: 55%;"></div>
+                  <span class="trend-label">M1</span>
+                </div>
+                <div class="trend-column">
+                  <div class="trend-bar" style="height: 72%;"></div>
+                  <span class="trend-label">M2</span>
+                </div>
+                <div class="trend-column">
+                  <div class="trend-bar" style="height: 48%;"></div>
+                  <span class="trend-label">M3</span>
+                </div>
+                <div class="trend-column">
+                  <div class="trend-bar" style="height: 82%;"></div>
+                  <span class="trend-label">M4</span>
+                </div>
+                <div class="trend-column">
+                  <div class="trend-bar" style="height: 65%;"></div>
+                  <span class="trend-label">M5</span>
+                </div>
+                <div class="trend-column">
+                  <div class="trend-bar" style="height: 90%;"></div>
+                  <span class="trend-label">M6</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="visual-card">
+              <div class="visual-title">Reporting perspectives</div>
+
+              <div class="stage-list">
+                <div class="stage-row">
+                  <span>By customer</span>
+                  <strong>Customer performance</strong>
+                </div>
+                <div class="stage-row">
+                  <span>By service</span>
+                  <strong>Service analysis</strong>
+                </div>
+                <div class="stage-row">
+                  <span>By geography</span>
+                  <strong>Country / route</strong>
+                </div>
+                <div class="stage-row">
+                  <span>By period</span>
+                  <strong>Monthly / quarterly / YTD</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="mockup-note">
+            Illustrative visualisation only. Labels and graphics demonstrate
+            the types of reporting views and do not represent actual results.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH -->
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">06 / Working approach</p>
+        <h2>Independent problem-solving.</h2>
+      </div>
+
+      <div class="callout">
+        <p>
+          Much of my reporting experience was developed through hands-on
+          problem-solving. I built reports from scratch, tested different
+          approaches, refined report logic and resolved issues until the
+          solutions worked as intended.
+        </p>
+
+        <p>
+          I focused on making data useful in practice: helping sales users
+          monitor their pipeline, giving managers a consistent reporting
+          view and enabling customer performance to be analysed from
+          shipment-level operational and financial data.
+        </p>
+      </div>
+
+      <div class="skills" aria-label="Skills demonstrated">
+        <span class="skill">Business Analysis</span>
+        <span class="skill">CRM Reporting</span>
+        <span class="skill">Sales Pipeline</span>
+        <span class="skill">Dashboard Development</span>
+        <span class="skill">Power BI</span>
+        <span class="skill">Reporting Automation</span>
+        <span class="skill">TMS & SAP Data</span>
+        <span class="skill">Operational Analysis</span>
+        <span class="skill">Financial Reporting</span>
+        <span class="skill">Gross Profit Analysis</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER NAVIGATION -->
+  <div class="container bottom-nav">
+    <a class="back-link" href="../index.html">
+      <span>←</span> Back to portfolio
+    </a>
+
+    <a class="back-link" href="crm-migration.html">
+      Previous project: CRM Migration <span>↗</span>
+    </a>
+  </div>
+
+</main>
+
+<footer>
+  <div class="container">
+    Independent portfolio project description · 2026
+  </div>
+</footer>
+
+</body>
+</html>
