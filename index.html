@@ -4,109 +4,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Business solutions portfolio covering CRM, business intelligence, reporting, Excel and process improvement.">
-<title>PQ-DataMate | Business Solutions Portfolio</title>
+<meta name="description" content="Business analysis, process improvement and practical digital solutions. Portfolio by PQ-DataMate.">
+<title>PQ-DataMate — Less Presentation. More Implementation.</title>
 <style>
 :root {
-  --bg:#0b1120;
-  --panel:#111b2e;
-  --panel2:#152239;
-  --text:#edf3ff;
-  --muted:#a4b3ca;
-  --accent:#65d5c4;
-  --blue:#8bb7ff;
-  --border:#283750;
+  --bg: #050505;
+  --surface: #101010;
+  --surface2: #171717;
+  --text: #f5f5f5;
+  --muted: #a1a1a1;
+  --line: #303030;
+  --white: #ffffff;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:85px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,Segoe UI,Arial,sans-serif;line-height:1.65}
-a{color:inherit;text-decoration:none}
-.container{width:min(1120px,90%);margin:auto}
-header{position:sticky;top:0;z-index:10;background:#0b1120ed;border-bottom:1px solid var(--border);backdrop-filter:blur(12px)}
-nav{min-height:72px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{font-weight:800;letter-spacing:-.5px;font-size:19px}
-.logo span{color:var(--accent)}
-.navlinks{display:flex;gap:25px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
-.navlinks a:hover{color:var(--accent)}
-.hero{padding:100px 0 82px;display:grid;grid-template-columns:1.3fr .7fr;align-items:center;gap:55px}
-.eyebrow{color:var(--accent);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
-h1{font-size:clamp(42px,6vw,68px);line-height:1.08;letter-spacing:-2px;margin:20px 0}
-h1 span{color:var(--accent)}
-  .remote-badge {
-  display: inline-block;
-  margin: 4px 0 10px;
-  padding: 7px 12px;
-  border: 1px solid var(--accent);
-  border-radius: 30px;
-  color: var(--accent);
-  font-size: 12px;
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+}
+a { color: inherit; text-decoration: none; }
+.container { width: min(1080px, 90%); margin: auto; }
+header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: rgba(5,5,5,.94);
+  border-bottom: 1px solid var(--line);
+}
+nav {
+  min-height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.logo { font-size: 16px; font-weight: 800; letter-spacing: -.4px; }
+.logo span { color: #888; }
+.navlinks { display: flex; gap: 24px; flex-wrap: wrap; }
+.navlinks a { color: var(--muted); font-size: 13px; }
+.navlinks a:hover { color: var(--white); }
+.hero {
+  min-height: 590px;
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  align-items: center;
+  gap: 55px;
+  padding-top: 75px;
+  padding-bottom: 75px;
+}
+.kicker {
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-size: 11px;
+  font-weight: 700;
+}
+h1 {
+  font-size: clamp(44px, 6.7vw, 76px);
+  line-height: 1.02;
+  letter-spacing: -3.8px;
+  margin: 22px 0;
   font-weight: 800;
-  letter-spacing: .7px;
 }
-h2{font-size:clamp(28px,4vw,38px);letter-spacing:-1px;line-height:1.2;margin:10px 0 15px}
-h3{margin:8px 0;font-size:20px}
-p{color:var(--muted)}
-.hero p{font-size:18px;max-width:650px}
-.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}
-.btn{display:inline-block;padding:12px 19px;border:1px solid var(--border);border-radius:9px;font-weight:700;font-size:14px}
-.btn.primary{background:var(--accent);color:#071520;border-color:var(--accent)}
-.btn:hover{transform:translateY(-2px)}
-.profile-card{background:linear-gradient(145deg,#172843,#101827);border:1px solid var(--border);border-radius:20px;padding:28px}
-.profile-icon{width:72px;height:72px;border-radius:18px;background:#1c3b4b;display:grid;place-items:center;color:var(--accent);font-size:32px;font-weight:800;margin-bottom:20px}
-.profile-card .role{font-size:13px;color:var(--accent);font-weight:700}
-.profile-card ul{padding-left:19px;color:var(--muted);font-size:14px}
-section{padding:75px 0;border-top:1px solid #1d2a3e}
-.section-intro{max-width:680px;margin-bottom:32px}
-.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
-.card{background:var(--panel);border:1px solid var(--border);border-radius:15px;padding:25px;min-width:0}
-.card:hover{border-color:#547c93}
-.project-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
-.number{color:var(--accent);font-weight:800;font-size:13px}
-.tag{font-size:11px;border:1px solid #35516a;border-radius:30px;padding:5px 9px;color:#b8d6ed;white-space:nowrap}
-.card p{font-size:14px}
-.card h3{margin-top:15px}
-.card h4{font-size:12px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin:20px 0 4px}
-.card ul{padding-left:18px;color:var(--muted);font-size:14px}
-.visual{margin-top:18px;background:#0b1424;border:1px solid #263950;border-radius:11px;padding:15px}
-.visual-title{font-size:11px;color:#a9bad2;letter-spacing:1px;text-transform:uppercase;margin-bottom:13px}
-.bar-row{display:grid;grid-template-columns:100px 1fr 30px;align-items:center;gap:9px;font-size:11px;color:#c5d1e3;margin:10px 0}
-.bar{height:9px;background:#24334b;border-radius:10px;overflow:hidden}
-.bar i{display:block;height:100%;background:var(--accent);border-radius:10px}
-.mini-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
-.mini-stat{background:#14233a;padding:12px 8px;border-radius:8px;text-align:center}
-.mini-stat strong{display:block;color:var(--accent);font-size:19px}
-.mini-stat span{font-size:10px;color:var(--muted)}
-.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
-.step{border-left:2px solid var(--accent);padding:4px 0 4px 17px}
-.step strong{display:block}
-.step span{color:var(--muted);font-size:13px}
-.skills{display:flex;gap:10px;flex-wrap:wrap;margin-top:20px}
-.skill{padding:9px 13px;border:1px solid var(--border);background:var(--panel);border-radius:8px;font-size:13px;color:#d5e2f4}
-.quote{font-size:17px;color:var(--text);font-style:italic}
-.quote-note{font-size:12px;color:var(--muted)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-footer{padding:30px 0;border-top:1px solid var(--border);color:var(--muted);font-size:12px}
-footer .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
-@media(max-width:760px){
- nav{padding:15px 0;align-items:flex-start;flex-direction:column}
- .navlinks{gap:14px}
- .hero{grid-template-columns:1fr;padding:65px 0}
- .grid,.about-grid{grid-template-columns:1fr}
- .timeline{grid-template-columns:1fr}
- section{padding:55px 0}
- h1{letter-spacing:-1.5px}
+h1 span { color: #888; }
+.hero-copy {
+  max-width: 570px;
+  font-size: 17px;
+  color: #c0c0c0;
+}
+.remote {
+  display: inline-block;
+  border: 1px solid #777;
+  padding: 7px 11px;
+  margin-top: 12px;
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  font-weight: 700;
+}
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn {
+  display: inline-block;
+  padding: 11px 17px;
+  border: 1px solid #777;
+  font-size: 13px;
+  font-weight: 700;
+}
+.btn.primary { background: white; color: black; border-color: white; }
+.btn:hover { opacity: .75; }
+.hero-art {
+  border: 1px solid var(--line);
+  background: linear-gradient(145deg, #191919, #080808 70%);
+  min-height: 330px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.art-top { font-size: 10px; color: #888; letter-spacing: 2px; }
+.art-mark {
+  font-size: clamp(76px, 10vw, 120px);
+  line-height: 1;
+  font-weight: 800;
+  letter-spacing: -9px;
+  color: #eee;
+}
+.art-bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  border-top: 1px solid #383838;
+  padding-top: 15px;
+  font-size: 10px;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+section { border-top: 1px solid var(--line); padding: 78px 0; }
+.section-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 32px;
+}
+.section-number { font-size: 11px; color: #888; letter-spacing: 2px; }
+h2 {
+  font-size: clamp(30px, 4vw, 43px);
+  letter-spacing: -1.6px;
+  line-height: 1.15;
+  margin: 8px 0 0;
+}
+.section-intro { color: var(--muted); max-width: 410px; font-size: 14px; }
+.projects { display: grid; gap: 15px; }
+.project {
+  display: grid;
+  grid-template-columns: 55px 1fr 240px;
+  gap: 24px;
+  padding: 26px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  align-items: start;
+}
+.project:hover { background: var(--surface2); border-color: #666; }
+.project-no { color: #777; font-size: 12px; padding-top: 5px; }
+.project h3 { margin: 0 0 9px; font-size: 21px; letter-spacing: -.5px; }
+.project p { margin: 0; color: #aaa; font-size: 14px; }
+.project-meta { color: #888; font-size: 11px; line-height: 1.9; text-align: right; }
+.project-label {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: #aaa;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  font-size: 10px;
+}
+.project ul { padding-left: 18px; margin: 12px 0 0; color: #aaa; font-size: 13px; }
+.project li { margin: 4px 0; }
+.note { color: #777; font-size: 11px; margin-top: 18px; }
+.approach {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border: 1px solid var(--line);
+}
+.approach article { padding: 25px; }
+.approach article + article { border-left: 1px solid var(--line); }
+.approach strong { font-size: 16px; display: block; margin-bottom: 8px; }
+.approach p { color: #999; font-size: 13px; margin: 0; }
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 24px;
+}
+.skills span {
+  border: 1px solid #393939;
+  padding: 8px 12px;
+  color: #c4c4c4;
+  font-size: 12px;
+}
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  padding: 30px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+.contact p { color: #999; font-size: 14px; margin-bottom: 0; }
+footer { border-top: 1px solid var(--line); padding: 25px 0; color: #777; font-size: 11px; }
+.footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+@media(max-width: 760px) {
+  nav { padding: 16px 0; align-items: flex-start; flex-direction: column; }
+  .navlinks { gap: 15px; }
+  .hero { grid-template-columns: 1fr; padding-top: 65px; gap: 35px; }
+  h1 { letter-spacing: -2px; }
+  .hero-art { min-height: 250px; }
+  .section-head { align-items: flex-start; flex-direction: column; gap: 10px; }
+  .project { grid-template-columns: 30px 1fr; gap: 15px; padding: 20px; }
+  .project-meta { grid-column: 2; text-align: left; }
+  .approach { grid-template-columns: 1fr; }
+  .approach article + article { border-left: 0; border-top: 1px solid var(--line); }
+  .contact { align-items: flex-start; flex-direction: column; padding: 22px; }
 }
 </style>
 </head>
 <body>
 <header>
   <nav class="container">
-    <a class="logo" href="#home">PQ<span>·</span>DataMate</a>
+    <a class="logo" href="#home">PQ<span> / </span>DATAMATE</a>
     <div class="navlinks">
-      <a href="#projects">Projects</a>
-      <a href="#impact">Business impact</a>
-      <a href="#skills">Skills</a>
-      <a href="#about">About</a>
+      <a href="#work">Work</a>
+      <a href="#approach">Approach</a>
+      <a href="#skills">Tools</a>
+      <a href="#contact">Contact</a>
     </div>
   </nav>
 </header>
@@ -114,239 +228,168 @@ footer .container{display:flex;justify-content:space-between;gap:15px;flex-wrap:
 <main>
 <section class="container hero" id="home" style="border-top:0">
   <div>
-    <div class="eyebrow">BUSINESS ANALYSIS · PROCESS IMPROVEMENT · POWER PLATFORM</div>
-    <h1>Turning business challenges into <span>better processes.</span></h1>
-    <p class="remote-badge">100% REMOTE · OPEN TO FULLY REMOTE OPPORTUNITIES</p>
-    <p>I help improve business processes by connecting business needs, data and technology. My work focuses on practical solutions, CRM and business applications, reporting, process optimisation and helping users adopt new ways of working.</p>
+    <div class="kicker">Business Analysis / Process Improvement</div>
+    <h1>Less presentation.<br><span>More implementation.</span></h1>
+    <p class="hero-copy">I identify business problems, gather user needs and turn them into practical solutions. Less unnecessary complexity. More useful work.</p>
+    <div class="remote">100% REMOTE OPPORTUNITIES ONLY</div>
     <div class="actions">
-      <a class="btn primary" href="#projects">Explore my projects ↘</a>
-      <a class="btn" href="#about">About this portfolio</a>
+      <a class="btn primary" href="#work">View selected work ↓</a>
+      <a class="btn" href="#contact">Get in touch</a>
     </div>
   </div>
-  <aside class="profile-card">
-    <div class="profile-icon">PQ</div>
-    <div class="role">BUSINESS & TECHNOLOGY</div>
-    <h3>From complex systems to confident users.</h3>
-    <p>My focus is making tools useful, processes clearer and information easier to act on.</p>
-    <ul>
-      <li>CRM migration and user enablement</li>
-      <li>Business intelligence and reporting</li>
-      <li>Excel tools and process improvement</li>
-    </ul>
+  <aside class="hero-art" aria-label="Portfolio visual">
+    <div class="art-top">FROM PROBLEM TO SOLUTION</div>
+    <div class="art-mark">DO.</div>
+    <div class="art-bottom"><span>Analyse</span><span>Build</span><span>Improve</span></div>
   </aside>
 </section>
 
-<section id="projects">
+<section id="work">
   <div class="container">
-    <div class="section-intro">
-      <div class="eyebrow">Selected work</div>
-      <h2>Projects & case studies</h2>
-      <p>A selection of business-focused work, from CRM adoption and reporting to practical tools that support daily operations. Visuals on this page are illustrative examples, not screenshots of production systems.</p>
+    <div class="section-head">
+      <div>
+        <div class="section-number">01 / SELECTED WORK</div>
+        <h2>Built to be useful.</h2>
+      </div>
+      <p class="section-intro">A few examples of turning business needs into tools, information and processes people can actually use.</p>
     </div>
-    <div class="grid">
 
-      <article class="card">
-        <div class="project-top"><span class="number">01 / CRM</span><span class="tag">Migration & adoption</span></div>
-        <h3>CRM Migration & User Enablement</h3>
-        <p><strong>Challenge:</strong> Help users adapt to a new CRM environment and understand migrated data, daily workflows and available support.</p>
-        <h4>My contribution</h4>
-        <ul>
-          <li>Supported users during the transition from Salesforce Sales Cloud to Microsoft Dynamics 365.</li>
-          <li>Helped explain the new system, migrated data and expected ways of working.</li>
-          <li>Provided user guidance and support, and gathered feedback after migration.</li>
-        </ul>
-        <h4>Focus areas</h4>
-        <div class="skills"><span class="skill">Dynamics 365</span><span class="skill">Salesforce</span><span class="skill">Training</span><span class="skill">User support</span></div>
-        <div class="visual">
-          <div class="visual-title">Illustrative transition journey</div>
-          <div class="timeline">
-            <div class="step"><strong>Prepare</strong><span>Understand the change</span></div>
-            <div class="step"><strong>Enable</strong><span>Guide users</span></div>
-            <div class="step"><strong>Support</strong><span>Collect feedback</span></div>
-          </div>
+    <div class="projects">
+      <article class="project">
+        <div class="project-no">01</div>
+        <div>
+          <span class="project-label">SharePoint / User enablement</span>
+          <h3>Dynamics 365 Knowledge Hub</h3>
+          <p>Designed and built a central SharePoint knowledge hub from scratch, based on feedback gathered from users.</p>
+          <ul>
+            <li>Created the information structure, navigation and visual layout.</li>
+            <li>Wrote step-by-step Dynamics 365 guides and an FAQ based on real user questions.</li>
+            <li>Organised announcements, reporting links and support resources in one place.</li>
+          </ul>
         </div>
+        <div class="project-meta">INDEPENDENTLY DESIGNED & BUILT<br>Prepared for launch<br><br>SharePoint · Dynamics 365</div>
       </article>
 
-      <article class="card">
-        <div class="project-top"><span class="number">02 / BI</span><span class="tag">Reporting & insights</span></div>
-        <h3>Business Intelligence & Reporting</h3>
-        <p><strong>Challenge:</strong> Make operational information easier to understand and use in day-to-day business decisions.</p>
-        <h4>Project focus</h4>
-        <ul>
-          <li>Worked with business reporting and shipment-related information.</li>
-          <li>Helped users navigate reports and interpret key measures.</li>
-          <li>Focused on presenting information in a practical, accessible way.</li>
-        </ul>
-        <h4>Tools & capabilities</h4>
-        <div class="skills"><span class="skill">Power BI</span><span class="skill">Data analysis</span><span class="skill">Reporting</span><span class="skill">Data visualisation</span></div>
-        <div class="visual">
-          <div class="visual-title">Illustrative operational overview · demo data</div>
-          <div class="mini-stats">
-            <div class="mini-stat"><strong>01</strong><span>Overview</span></div>
-            <div class="mini-stat"><strong>02</strong><span>Trends</span></div>
-            <div class="mini-stat"><strong>03</strong><span>Details</span></div>
-          </div>
-          <div class="bar-row"><span>Category A</span><div class="bar"><i style="width:78%"></i></div><span>78</span></div>
-          <div class="bar-row"><span>Category B</span><div class="bar"><i style="width:55%"></i></div><span>55</span></div>
-          <div class="bar-row"><span>Category C</span><div class="bar"><i style="width:36%"></i></div><span>36</span></div>
+      <article class="project">
+        <div class="project-no">02</div>
+        <div>
+          <span class="project-label">Business analysis / CRM</span>
+          <h3>CRM Migration & User Enablement</h3>
+          <p>Supported users through a transition from Salesforce Sales Cloud to Microsoft Dynamics 365.</p>
+          <ul>
+            <li>Helped users understand the new system and migrated information.</li>
+            <li>Provided guidance and support around new ways of working.</li>
+            <li>Worked with post-migration feedback to understand user needs.</li>
+          </ul>
         </div>
+        <div class="project-meta">USER SUPPORT & ADOPTION<br><br>Dynamics 365 · Salesforce</div>
       </article>
 
-      <article class="card">
-        <div class="project-top"><span class="number">03 / EXCEL</span><span class="tag">Business tools</span></div>
-        <h3>Excel Business Tools</h3>
-        <p><strong>Challenge:</strong> Structure business inputs and calculations into a practical tool that supports consistent daily work.</p>
-        <h4>Project focus</h4>
-        <ul>
-          <li>Worked with spreadsheet-based business calculations and structured inputs.</li>
-          <li>Organised information to make calculations and results easier to follow.</li>
-          <li>Focused on usability and a clear flow from inputs to outputs.</li>
-        </ul>
-        <h4>Tools & capabilities</h4>
-        <div class="skills"><span class="skill">Microsoft Excel</span><span class="skill">Formulas</span><span class="skill">Process design</span><span class="skill">Data structure</span></div>
-        <div class="visual">
-          <div class="visual-title">Illustrative calculator flow</div>
-          <div class="timeline">
-            <div class="step"><strong>Input</strong><span>Enter parameters</span></div>
-            <div class="step"><strong>Calculate</strong><span>Apply logic</span></div>
-            <div class="step"><strong>Review</strong><span>Check results</span></div>
-          </div>
+      <article class="project">
+        <div class="project-no">03</div>
+        <div>
+          <span class="project-label">Data / Reporting</span>
+          <h3>Business Intelligence & Reporting</h3>
+          <p>Worked with operational reporting to make business information easier to navigate and understand.</p>
+          <ul>
+            <li>Worked with business reports and shipment-related information.</li>
+            <li>Helped users navigate reporting resources and interpret information.</li>
+          </ul>
         </div>
+        <div class="project-meta">REPORTING & DATA VISUALISATION<br><br>Power BI · Business reporting</div>
       </article>
 
-      <article class="card">
-        <div class="project-top"><span class="number">04 / CRM & APPS</span><span class="tag">Processes & usability</span></div>
-        <h3>CRM Dashboards & Business Applications</h3>
-        <p><strong>Challenge:</strong> Help people find relevant information and complete routine tasks more efficiently.</p>
-        <h4>Project focus</h4>
-        <ul>
-          <li>Worked with CRM dashboards, reports and business information.</li>
-          <li>Supported the use of business applications and reporting features.</li>
-          <li>Explored opportunities to improve workflows and user experience.</li>
-        </ul>
-        <h4>Tools & capabilities</h4>
-        <div class="skills"><span class="skill">Dynamics 365</span><span class="skill">Salesforce</span><span class="skill">SharePoint</span><span class="skill">Power Apps</span></div>
-        <div class="visual">
-          <div class="visual-title">Illustrative workspace structure</div>
-          <div class="mini-stats">
-            <div class="mini-stat"><strong>01</strong><span>Dashboards</span></div>
-            <div class="mini-stat"><strong>02</strong><span>Workflows</span></div>
-            <div class="mini-stat"><strong>03</strong><span>Guidance</span></div>
-          </div>
+      <article class="project">
+        <div class="project-no">04</div>
+        <div>
+          <span class="project-label">Excel / Practical tools</span>
+          <h3>Excel Business Tools</h3>
+          <p>Worked with spreadsheet-based business calculations and structured inputs to support everyday operational tasks.</p>
+          <ul>
+            <li>Organised inputs and calculation flows.</li>
+            <li>Focused on clarity, usability and practical outputs.</li>
+          </ul>
         </div>
+        <div class="project-meta">BUSINESS TOOLING<br><br>Excel · Process improvement</div>
       </article>
-
     </div>
+    <p class="note">Project descriptions are concise summaries. Visual examples and additional details can be added using non-confidential demonstration data.</p>
   </div>
 </section>
 
-<section id="impact">
+<section id="approach">
   <div class="container">
-    <div class="section-intro">
-      <div class="eyebrow">Outcomes that matter</div>
-      <h2>Business impact & user experience</h2>
-      <p>Successful solutions are not only about technology. They are also about whether people understand the tools, know how to use them and can get help when they need it.</p>
+    <div class="section-head">
+      <div>
+        <div class="section-number">02 / APPROACH</div>
+        <h2>Less talk. Clear steps.</h2>
+      </div>
+      <p class="section-intro">I prefer understanding the problem, building something useful and improving it based on feedback.</p>
     </div>
-    <div class="grid">
-      <article class="card">
-        <div class="number">USER ENABLEMENT</div>
-        <h3>Supporting adoption through change</h3>
-        <p>Training, practical explanations and follow-up support can help users feel more confident when moving to a new system.</p>
-        <div class="visual">
-          <div class="visual-title">Approach</div>
-          <div class="bar-row"><span>Clear guidance</span><div class="bar"><i style="width:90%"></i></div><span>→</span></div>
-          <div class="bar-row"><span>Practical support</span><div class="bar"><i style="width:85%"></i></div><span>→</span></div>
-          <div class="bar-row"><span>Feedback loop</span><div class="bar"><i style="width:80%"></i></div><span>→</span></div>
-        </div>
-        <p class="quote-note">Conceptual illustration of the approach, not measured results.</p>
+    <div class="approach">
+      <article>
+        <strong>01. Understand</strong>
+        <p>Talk to users. Find the real need, not just the initial request.</p>
       </article>
-      <article class="card">
-        <div class="number">CONTINUOUS IMPROVEMENT</div>
-        <h3>Listening, learning, improving</h3>
-        <p>Post-migration feedback can highlight what worked well, where users need more guidance and which parts of the process could be improved.</p>
-        <ul>
-          <li>Collect feedback after implementation.</li>
-          <li>Identify recurring questions and support gaps.</li>
-          <li>Use findings to improve future enablement activities.</li>
-        </ul>
+      <article>
+        <strong>02. Implement</strong>
+        <p>Build a practical solution, organise the information and make it usable.</p>
+      </article>
+      <article>
+        <strong>03. Improve</strong>
+        <p>Gather feedback, identify gaps and make the next version better.</p>
       </article>
     </div>
-    <div class="card" style="margin-top:20px">
-      <h3>What I value</h3>
-      <p class="quote">“A business tool is only truly useful when people understand how it helps them do their work.”</p>
-      <p class="quote-note">My professional approach — not a customer quotation.</p>
-    </div>
-    <p style="font-size:13px;margin-top:20px">Verified survey results and approved, anonymised feedback can be added here once the figures and permission to publish have been confirmed.</p>
   </div>
 </section>
 
 <section id="skills">
   <div class="container">
-    <div class="section-intro">
-      <div class="eyebrow">Toolkit</div>
-      <h2>Skills & technologies</h2>
-      <p>A combination of business understanding, reporting tools and user-focused problem solving.</p>
+    <div class="section-head">
+      <div>
+        <div class="section-number">03 / TOOLKIT</div>
+        <h2>Tools I work with.</h2>
+      </div>
+      <p class="section-intro">Technology is a means to solve a business problem — not the end goal.</p>
     </div>
-    <div class="grid">
-      <article class="card">
-        <h3>Data & reporting</h3>
-        <div class="skills"><span class="skill">Power BI</span><span class="skill">Excel</span><span class="skill">Business reporting</span><span class="skill">Data analysis</span><span class="skill">Visualisation</span></div>
-      </article>
-      <article class="card">
-        <h3>CRM & business applications</h3>
-        <div class="skills"><span class="skill">Microsoft Dynamics 365</span><span class="skill">Salesforce Sales Cloud</span><span class="skill">SharePoint</span><span class="skill">Power Apps</span></div>
-      </article>
-      <article class="card">
-        <h3>Business processes</h3>
-        <div class="skills"><span class="skill">Process improvement</span><span class="skill">Requirements understanding</span><span class="skill">Structured problem solving</span></div>
-      </article>
-      <article class="card">
-        <h3>People & adoption</h3>
-        <div class="skills"><span class="skill">User training</span><span class="skill">User support</span><span class="skill">Knowledge sharing</span><span class="skill">Change adoption</span></div>
-      </article>
+    <div class="skills">
+      <span>SharePoint</span>
+      <span>Microsoft Dynamics 365</span>
+      <span>Power BI</span>
+      <span>Microsoft Excel</span>
+      <span>Salesforce Sales Cloud</span>
+      <span>Power Platform</span>
+      <span>Process Improvement</span>
+      <span>User Enablement</span>
+      <span>Business Reporting</span>
     </div>
   </div>
 </section>
 
-<section id="about">
+<section id="contact">
   <div class="container">
-    <div class="section-intro">
-      <div class="eyebrow">About</div>
-      <h2>Bridging business and technology</h2>
-    </div>
-    <div class="about-grid">
+    <div class="section-head">
       <div>
-        <p>I enjoy turning complex business requirements into clear, practical solutions. My experience spans reporting, CRM environments, spreadsheet-based tools and helping users get the most from business applications.</p>
-        <p>I value clarity, reliability and solutions that make everyday work easier — for both the people using a tool and the teams relying on its information.</p>
-      </div>
-      <div class="card">
-        <h3>What you can expect</h3>
-        <ul>
-          <li>A practical, business-oriented mindset.</li>
-          <li>Attention to usability and data clarity.</li>
-          <li>A focus on user confidence and adoption.</li>
-          <li>Continuous learning and improvement.</li>
-        </ul>
+        <div class="section-number">04 / CONTACT</div>
+        <h2>Have a real problem to solve?</h2>
       </div>
     </div>
-    <div class="card" style="margin-top:24px">
-      <h3>Let's connect</h3>
-      <p>Interested in business intelligence, CRM, reporting or process improvement? You can add your professional contact details here when you're ready.</p>
-      <div class="actions">
-        <!-- Add your LinkedIn profile URL or professional email before publishing contact links. -->
-        <a class="btn primary" href="mailto:">Email me</a>
-        <a class="btn" href="#projects">Explore projects</a>
+    <div class="contact">
+      <div>
+        <strong>Open to fully remote opportunities.</strong>
+        <p>Business Analysis · Process Improvement · Power Platform</p>
       </div>
-      <p class="quote-note">Remember to replace the email link with your professional email address before sharing this portfolio.</p>
+      <!-- Replace the empty email link with your professional email address before publishing. -->
+      <a class="btn primary" href="mailto:">Contact me ↗</a>
     </div>
   </div>
 </section>
 </main>
 
 <footer>
-  <div class="container">
-    <span>© <span id="year">2026</span> PQ-DataMate · Business Solutions Portfolio</span>
-    <span>Built with GitHub Pages · Demonstration visuals use illustrative content</span>
+  <div class="container footer-inner">
+    <span>© 2026 PQ-DataMate</span>
+    <span>Less presentation. More implementation.</span>
   </div>
 </footer>
 </body>
