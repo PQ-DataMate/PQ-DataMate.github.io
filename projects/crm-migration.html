@@ -1,0 +1,841 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="CRM Migration & User Onboarding — user feedback, structured Dynamics 365 training and post-go-live support.">
+
+  <title>CRM Migration & User Onboarding | PQ — Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --surface: #111419;
+      --surface-light: #171b21;
+      --text: #f2f3f5;
+      --muted: #a0a6b0;
+      --line: #2b3038;
+      --accent: #d8e5ff;
+      --max-width: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero {
+      padding: 100px 0 76px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1.06;
+      letter-spacing: -0.055em;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 690px;
+      margin: 28px 0 0;
+      color: #bdc2ca;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      color: #c5cad2;
+      font-size: 10px;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+    }
+
+    section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(27px, 4vw, 39px);
+      line-height: 1.2;
+      letter-spacing: -0.035em;
+      font-weight: 600;
+    }
+
+    .section-heading p {
+      max-width: 680px;
+      margin: 15px 0 0;
+      color: var(--muted);
+    }
+
+    .challenge-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .panel {
+      padding: 26px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .panel p {
+      margin: 0;
+      color: #b7bdc6;
+      font-size: 14px;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat {
+      min-height: 145px;
+      padding: 23px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .stat-number {
+      display: block;
+      margin-bottom: 10px;
+      font-size: clamp(29px, 4vw, 43px);
+      line-height: 1.1;
+      letter-spacing: -0.045em;
+      font-weight: 600;
+    }
+
+    .stat-label {
+      color: #b7bdc6;
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .contribution-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 36px;
+    }
+
+    .contribution {
+      padding: 24px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .contribution-number {
+      color: #8993a2;
+      font-size: 11px;
+      letter-spacing: 0.12em;
+    }
+
+    .contribution h3 {
+      margin: 8px 0;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .contribution p {
+      margin: 0;
+      color: #b7bdc6;
+      font-size: 14px;
+    }
+
+    .training-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .training-card {
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .training-card .topic-number {
+      color: #8993a2;
+      font-size: 11px;
+      letter-spacing: 0.13em;
+    }
+
+    .training-card h3 {
+      margin: 10px 0;
+      font-size: 19px;
+      font-weight: 600;
+    }
+
+    .training-card p {
+      margin: 0;
+      color: #b7bdc6;
+      font-size: 14px;
+    }
+
+    .feedback-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .quote-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 225px;
+      padding: 27px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .quote-mark {
+      color: #8993a2;
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    blockquote {
+      margin: 20px 0;
+      font-size: clamp(18px, 2.4vw, 23px);
+      line-height: 1.5;
+      letter-spacing: -0.02em;
+    }
+
+    .quote-source {
+      color: var(--muted);
+      font-size: 11px;
+    }
+
+    .survey-list {
+      display: grid;
+      gap: 24px;
+    }
+
+    .survey-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 6px 20px;
+      align-items: end;
+    }
+
+    .survey-label {
+      color: #d9dde3;
+      font-size: 14px;
+    }
+
+    .survey-value {
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    .bar-track {
+      grid-column: 1 / -1;
+      height: 5px;
+      overflow: hidden;
+      background: #252a32;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: #c5d5ef;
+    }
+
+    .survey-note {
+      margin-top: 28px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    .follow-up {
+      padding: 26px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .follow-up p {
+      margin: 0;
+      color: #c1c6ce;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 25px;
+    }
+
+    .skill {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      color: #c5cad2;
+      font-size: 11px;
+    }
+
+    .bottom-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 34px 0;
+    }
+
+    .back-link {
+      color: #d9dde3;
+      font-size: 13px;
+    }
+
+    .back-link span {
+      color: var(--muted);
+    }
+
+    footer {
+      padding: 22px 0 36px;
+      color: #777f8a;
+      font-size: 11px;
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: calc(100% - 32px);
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+        gap: 12px;
+      }
+
+      .nav-links {
+        gap: 16px;
+      }
+
+      .hero {
+        padding: 68px 0 52px;
+      }
+
+      section {
+        padding: 54px 0;
+      }
+
+      .challenge-grid,
+      .contribution-list,
+      .training-grid,
+      .feedback-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .stat {
+        min-height: 125px;
+        padding: 18px;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+
+      .survey-item {
+        gap: 8px 12px;
+      }
+
+      .bottom-nav {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="../index.html">PQ / PORTFOLIO</a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="knowledge-hub.html">01 Knowledge Hub</a>
+        <a href="#project-feedback">Feedback</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <div class="hero">
+      <div class="container">
+        <p class="eyebrow">02 / CRM Migration & User Onboarding</p>
+
+        <h1>Helping users navigate change.</h1>
+
+        <p class="hero-description">
+          Supporting the transition from Oracle Sales Cloud to Microsoft
+          Dynamics 365 through structured online training, user feedback
+          and practical follow-up support.
+        </p>
+
+        <div class="hero-meta">
+          <span class="pill">September 2026</span>
+          <span class="pill">12 training sessions</span>
+          <span class="pill">Microsoft Teams</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHALLENGE -->
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">01 / Context</p>
+          <h2>The challenge</h2>
+          <p>
+            Moving to a new CRM meant adapting to a different environment,
+            navigation and ways of working. Users needed practical guidance
+            on everyday tasks and the differences between the old and new
+            systems.
+          </p>
+        </div>
+
+        <div class="challenge-grid">
+          <article class="panel">
+            <h3>Understand user needs</h3>
+            <p>
+              Gather feedback through surveys and team chats to understand
+              participants' experiences, questions and areas where they
+              needed additional guidance.
+            </p>
+          </article>
+
+          <article class="panel">
+            <h3>Support the transition</h3>
+            <p>
+              Deliver topic-based training sessions, explain key CRM
+              workflows and provide follow-up when a question required
+              further verification.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- AT A GLANCE -->
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">02 / At a glance</p>
+          <h2>The work in numbers.</h2>
+          <p>
+            A structured training programme supported by direct
+            communication with users.
+          </p>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat">
+            <span class="stat-number">12</span>
+            <span class="stat-label">
+              Online training sessions delivered in September 2026
+            </span>
+          </div>
+
+          <div class="stat">
+            <span class="stat-number">4</span>
+            <span class="stat-label">
+              Main training topics organised around user workflows
+            </span>
+          </div>
+
+          <div class="stat">
+            <span class="stat-number">24</span>
+            <span class="stat-label">
+              Polish responses included in the post-go-live survey analysis
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTRIBUTION -->
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">03 / My contribution</p>
+          <h2>From feedback to user support.</h2>
+        </div>
+
+        <div class="contribution-list">
+          <article class="contribution">
+            <span class="contribution-number">01</span>
+            <h3>User feedback</h3>
+            <p>
+              Collected feedback through surveys and team chats to understand
+              user experiences, questions and training-related needs.
+            </p>
+          </article>
+
+          <article class="contribution">
+            <span class="contribution-number">02</span>
+            <h3>Training planning & delivery</h3>
+            <p>
+              Delivered 12 Microsoft Teams sessions across multiple dates
+              and time slots, making it easier for users to attend.
+            </p>
+          </article>
+
+          <article class="contribution">
+            <span class="contribution-number">03</span>
+            <h3>Practical CRM onboarding</h3>
+            <p>
+              Explained navigation, customer records, activities, leads,
+              opportunities, sales stages and management reporting.
+            </p>
+          </article>
+
+          <article class="contribution">
+            <span class="contribution-number">04</span>
+            <h3>Individual follow-up</h3>
+            <p>
+              When a question required further verification, researched
+              the topic and returned to the user individually the next day.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAINING PROGRAMME -->
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">04 / Training programme</p>
+          <h2>Focused on everyday CRM tasks.</h2>
+          <p>
+            The sessions were divided into four practical areas,
+            covering core navigation as well as specific sales workflows.
+          </p>
+        </div>
+
+        <div class="training-grid">
+          <article class="training-card">
+            <span class="topic-number">TOPIC 01</span>
+            <h3>CRM fundamentals</h3>
+            <p>
+              Login, screens, navigation, search, customer records,
+              activities and key differences between Oracle Sales Cloud
+              and Dynamics 365.
+            </p>
+          </article>
+
+          <article class="training-card">
+            <span class="topic-number">TOPIC 02</span>
+            <h3>Opportunities</h3>
+            <p>
+              Finding and creating opportunities, with an overview of
+              the sales stages.
+            </p>
+          </article>
+
+          <article class="training-card">
+            <span class="topic-number">TOPIC 03</span>
+            <h3>Leads</h3>
+            <p>
+              Understanding the automated lead process, searching for
+              existing leads and creating new records.
+            </p>
+          </article>
+
+          <article class="training-card">
+            <span class="topic-number">TOPIC 04</span>
+            <h3>Management reporting</h3>
+            <p>
+              Finding management reports, an introduction to CPR
+              and a dedicated question-and-answer session.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PARTICIPANT FEEDBACK -->
+    <section id="project-feedback">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">05 / Participant feedback</p>
+          <h2>Feedback from the people who attended.</h2>
+          <p>
+            Selected comments shared by participants in Microsoft Teams
+            after the training sessions.
+          </p>
+        </div>
+
+        <div class="feedback-grid">
+          <article class="quote-card">
+            <div>
+              <div class="quote-mark" aria-hidden="true">“</div>
+              <blockquote>
+                The training was first-class.
+              </blockquote>
+            </div>
+            <div class="quote-source">
+              Participant feedback · Microsoft Teams
+            </div>
+          </article>
+
+          <article class="quote-card">
+            <div>
+              <div class="quote-mark" aria-hidden="true">“</div>
+              <blockquote>
+                Respect for getting back to me with an answer.
+              </blockquote>
+            </div>
+            <div class="quote-source">
+              Participant feedback · Individual follow-up
+            </div>
+          </article>
+        </div>
+
+        <p style="color: #858d99; font-size: 11px; margin-top: 16px;">
+          Comments translated from Polish and presented anonymously.
+          Wording has been lightly edited for clarity.
+        </p>
+      </div>
+    </section>
+
+    <!-- SURVEY RESULTS -->
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">06 / Post-go-live survey</p>
+          <h2>What Polish respondents reported.</h2>
+          <p>
+            Results from 24 survey responses where the country field
+            was Poland or Polska.
+          </p>
+        </div>
+
+        <div class="survey-list">
+
+          <div class="survey-item">
+            <div class="survey-label">
+              Knew what was expected of them when working in Dynamics
+            </div>
+            <div class="survey-value">24 / 24 · 100%</div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="survey-item">
+            <div class="survey-label">
+              Were clear about which data had been migrated
+            </div>
+            <div class="survey-value">24 / 24 · 100%</div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 100%;"></div>
+            </div>
+          </div>
+
+          <div class="survey-item">
+            <div class="survey-label">
+              Did not identify a need to improve the training setup
+            </div>
+            <div class="survey-value">20 / 24 · 83%</div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 83.33%;"></div>
+            </div>
+          </div>
+
+          <div class="survey-item">
+            <div class="survey-label">
+              Reported no problems working in Dynamics
+            </div>
+            <div class="survey-value">19 / 24 · 79%</div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 79.17%;"></div>
+            </div>
+          </div>
+
+          <div class="survey-item">
+            <div class="survey-label">
+              Rated the support received so far positively
+            </div>
+            <div class="survey-value">20 / 24 · 83%</div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 83.33%;"></div>
+            </div>
+          </div>
+
+          <div class="survey-item">
+            <div class="survey-label">
+              Said they liked Dynamics
+            </div>
+            <div class="survey-value">22 / 24 · 92%</div>
+            <div class="bar-track">
+              <div class="bar-fill" style="width: 91.67%;"></div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="survey-note">
+          <strong>How to interpret these results</strong><br>
+          The survey captured respondents' overall experience with Dynamics
+          approximately one month after go-live. It was not a direct
+          evaluation of the training sessions, and the results should not
+          be interpreted as proof that the training alone caused these
+          outcomes. Four respondents said they had not needed support yet;
+          the remaining responses account for the support ratings shown.
+          Percentages are rounded to the nearest whole number.
+        </div>
+      </div>
+    </section>
+
+    <!-- TAKEAWAY -->
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">07 / Key takeaway</p>
+          <h2>Supporting the human side of system change.</h2>
+        </div>
+
+        <div class="follow-up">
+          <p>
+            This work combined user feedback, structured knowledge sharing
+            and individual follow-up. The focus was on helping people
+            understand the new CRM and giving them a clear route to ask
+            questions when they needed further support.
+          </p>
+        </div>
+
+        <div class="skills" aria-label="Skills demonstrated">
+          <span class="skill">Business Analysis</span>
+          <span class="skill">User Feedback</span>
+          <span class="skill">User Adoption</span>
+          <span class="skill">Training & Onboarding</span>
+          <span class="skill">Stakeholder Communication</span>
+          <span class="skill">Microsoft Dynamics 365</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER NAVIGATION -->
+    <div class="container bottom-nav">
+      <a class="back-link" href="../index.html">
+        <span>←</span> Back to portfolio
+      </a>
+
+      <a class="back-link" href="knowledge-hub.html">
+        Next project: Knowledge Hub <span>↗</span>
+      </a>
+    </div>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      Independent portfolio project description · 2026
+    </div>
+  </footer>
+
+</body>
+</html>
