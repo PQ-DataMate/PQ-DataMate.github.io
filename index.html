@@ -238,8 +238,19 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: #777; font-s
 
 
 #languages {
-  border-top: 1px solid #303030;
+  border-top: none;
   padding-top: 60px;
+  position: relative;
+}
+
+#languages::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100vw;
+  border-top: 1px solid #303030;
 }
 
 </style>
