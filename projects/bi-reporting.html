@@ -224,6 +224,124 @@
 
     /* Illustrative dashboard mockups */
 
+.hit-rate-layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.5fr;
+  gap: 14px;
+}
+
+.hit-rate-card {
+  min-width: 0;
+  padding: 20px;
+  border: 1px solid #2b3038;
+  background: #111419;
+}
+
+.hit-rate-value {
+  margin-top: 16px;
+  font-size: clamp(42px, 6vw, 64px);
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -0.05em;
+  color: #c5d5ef;
+}
+
+.hit-rate-card h3 {
+  margin: 12px 0 8px;
+  font-size: 17px;
+}
+
+.hit-rate-card p {
+  margin: 0;
+  color: #a0a6b0;
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.hit-rate-track {
+  height: 8px;
+  margin-top: 24px;
+  background: #292e37;
+}
+
+.hit-rate-fill {
+  width: 25%;
+  height: 100%;
+  background: #91bdf7;
+}
+
+.hit-rate-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+  color: #929ba8;
+  font-size: 10px;
+}
+
+.hit-rate-chart {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 8px;
+  height: 175px;
+  margin-top: 20px;
+}
+
+.hit-rate-y-axis {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-bottom: 0;
+  color: #929ba8;
+  font-size: 10px;
+  text-align: right;
+}
+
+.hit-rate-plot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  height: 145px;
+}
+
+.hit-rate-gridline {
+  width: 100%;
+  border-top: 1px dashed #343a44;
+}
+
+.hit-rate-plot svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.hit-rate-months {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 2px;
+  margin: 8px 0 0 42px;
+  color: #929ba8;
+  font-size: 9px;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  .hit-rate-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hit-rate-card {
+    padding: 16px;
+  }
+
+  .hit-rate-months {
+    font-size: 8px;
+  }
+}
+
     .mockup {
       margin-top: 28px;
       overflow: hidden;
@@ -681,41 +799,143 @@
         </p>
       </div>
 
-      <div class="details-list">
-        <article class="detail-item">
-          <h3>Sales pipeline reporting</h3>
-          <p>
-            Reports covering open and closed opportunities, sales stages,
-            recently closed business, pipeline status and sales leads.
-          </p>
-        </article>
+     
+<div class="details-list">
+  <article class="detail-item">
+    <h3>Sales pipeline & Hit Rate</h3>
+    <p>
+      Reporting on open and closed opportunities, sales stages,
+      pipeline value and Hit Rate — a key performance indicator
+      for the Sales Division, measuring the share of won
+      opportunities among all closed opportunities.
+    </p>
+  </article>
 
-        <article class="detail-item">
-          <h3>Sales activity reporting</h3>
-          <p>
-            Visibility into sales activities, including visits, phone
-            calls, quotations and other customer-related interactions.
-          </p>
-        </article>
+  <article class="detail-item">
+    <h3>Sales activity reporting</h3>
+    <p>
+      Visibility into sales activities, including visits,
+      phone calls, quotations and other customer-related interactions.
+    </p>
+  </article>
 
-        <article class="detail-item">
-          <h3>Automated notifications</h3>
-          <p>
-            Configured reporting agents and conditions, including
-            notifications to opportunity owners when opportunities
-            became overdue.
-          </p>
-        </article>
+  <article class="detail-item">
+    <h3>Automated notifications</h3>
+    <p>
+      Configured reporting agents and conditions, including
+      notifications to opportunity owners when opportunities
+      became overdue.
+    </p>
+  </article>
 
-        <article class="detail-item">
-          <h3>Scheduled reporting</h3>
-          <p>
-            Set up Friday end-of-week reports for sales users and
-            Monday morning reporting for managers preparing for
-            weekly board meetings.
-          </p>
-        </article>
+  <article class="detail-item">
+    <h3>Scheduled reporting</h3>
+    <p>
+      Set up Friday end-of-week reports for sales users and
+      Monday morning reporting for managers preparing for
+      weekly board meetings.
+    </p>
+  </article>
+</div>
+
+<div class="mockup">
+  <div class="mockup-top">
+    <div>
+      <div class="mockup-title">SALES PERFORMANCE / HIT RATE</div>
+      <div class="mockup-subtitle">
+        Illustrative example · Not actual company data
       </div>
+    </div>
+    <div class="mockup-subtitle">Last 12 months</div>
+  </div>
+
+  <div class="mockup-body">
+    <div class="hit-rate-layout">
+      <div class="hit-rate-card">
+        <span class="metric-label">KEY SALES KPI</span>
+        <div class="hit-rate-value">25%</div>
+        <h3>Hit Rate</h3>
+        <p>
+          Share of won opportunities among all closed
+          opportunities (won + lost).
+        </p>
+        <div class="hit-rate-track">
+          <div class="hit-rate-fill"></div>
+        </div>
+        <div class="hit-rate-scale">
+          <span>0%</span>
+          <span>100%</span>
+        </div>
+      </div>
+
+      <div class="hit-rate-card">
+        <span class="metric-label">HIT RATE TREND</span>
+        <div class="hit-rate-chart">
+          <div class="hit-rate-y-axis">
+            <span>40%</span>
+            <span>30%</span>
+            <span>20%</span>
+            <span>10%</span>
+            <span>0%</span>
+          </div>
+
+          <div class="hit-rate-plot">
+            <div class="hit-rate-gridline"></div>
+            <div class="hit-rate-gridline"></div>
+            <div class="hit-rate-gridline"></div>
+            <div class="hit-rate-gridline"></div>
+            <div class="hit-rate-gridline"></div>
+
+            <svg viewBox="0 0 600 160"
+                 preserveAspectRatio="none"
+                 role="img"
+                 aria-label="Illustrative monthly Hit Rate trend">
+              <polygon
+                points="0,100 54,78 109,66 163,62 218,91 273,98 327,81 382,69 436,43 491,48 545,82 600,74 600,145 0,145"
+                fill="#83b5f5"
+                fill-opacity="0.10"
+              />
+              <polyline
+                points="0,100 54,78 109,66 163,62 218,91 273,98 327,81 382,69 436,43 491,48 545,82 600,74"
+                fill="none"
+                stroke="#91bdf7"
+                stroke-width="2.5"
+                vector-effect="non-scaling-stroke"
+              />
+              <g fill="#91bdf7">
+                <circle cx="0" cy="100" r="4"/>
+                <circle cx="54" cy="78" r="4"/>
+                <circle cx="109" cy="66" r="4"/>
+                <circle cx="163" cy="62" r="4"/>
+                <circle cx="218" cy="91" r="4"/>
+                <circle cx="273" cy="98" r="4"/>
+                <circle cx="327" cy="81" r="4"/>
+                <circle cx="382" cy="69" r="4"/>
+                <circle cx="436" cy="43" r="4"/>
+                <circle cx="491" cy="48" r="4"/>
+                <circle cx="545" cy="82" r="4"/>
+                <circle cx="600" cy="74" r="4"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="hit-rate-months">
+          <span>Jan</span><span>Feb</span><span>Mar</span>
+          <span>Apr</span><span>May</span><span>Jun</span>
+          <span>Jul</span><span>Aug</span><span>Sep</span>
+          <span>Oct</span><span>Nov</span><span>Dec</span>
+        </div>
+      </div>
+    </div>
+
+    <p class="mockup-note">
+      Conceptual illustration only. The 25% figure and monthly
+      trend are fictional examples, not historical company results.
+    </p>
+  </div>
+</div>
+
 
       <!-- Illustrative CRM dashboard -->
       <div class="mockup">
