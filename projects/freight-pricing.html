@@ -1,0 +1,689 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Case study: an Excel-based customer self-service freight pricing calculator designed to simplify access to quoted transport rates.">
+  <title>Freight Pricing Calculator | PQ - Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --surface: #111419;
+      --surface-light: #171b21;
+      --text: #f2f3f5;
+      --muted: #a0a6b0;
+      --line: #2b3038;
+      --accent: #c5d5ef;
+      --max-width: 1040px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    header { border-bottom: 1px solid var(--line); }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero {
+      padding: 100px 0 76px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 0;
+      font-size: clamp(40px, 6vw, 70px);
+      line-height: 1.06;
+      letter-spacing: -.055em;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      margin: 28px 0 0;
+      color: #bdc2ca;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .hero-meta, .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .pill, .skill {
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      color: #c5cad2;
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    section {
+      padding: 76px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading { margin-bottom: 32px; }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(27px, 4vw, 39px);
+      line-height: 1.2;
+      letter-spacing: -.035em;
+      font-weight: 600;
+    }
+
+    .section-heading > p:last-child {
+      max-width: 720px;
+      margin: 15px 0 0;
+      color: var(--muted);
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .panel {
+      min-width: 0;
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .panel h3 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .panel p, .panel li {
+      color: #b7bdc6;
+      font-size: 14px;
+    }
+
+    .panel p { margin: 0; }
+    .panel ul { padding-left: 18px; }
+    .panel li + li { margin-top: 7px; }
+
+    .number {
+      display: block;
+      margin-bottom: 12px;
+      color: #d7e2f3;
+      font-size: 11px;
+      letter-spacing: .13em;
+    }
+
+    .workflow {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .workflow-step {
+      padding: 20px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .workflow-step strong {
+      display: block;
+      margin-bottom: 7px;
+      font-size: 14px;
+    }
+
+    .workflow-step span {
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .mockup {
+      margin-top: 28px;
+      overflow: hidden;
+      border: 1px solid #343a44;
+      background: #101318;
+    }
+
+    .mockup-top {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 15px 18px;
+      border-bottom: 1px solid #343a44;
+      background: #171b21;
+    }
+
+    .mockup-title { font-size: 12px; font-weight: 700; }
+    .mockup-subtitle { color: #929ba8; font-size: 10px; }
+    .mockup-body { padding: 22px; }
+
+    .excel-toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: #b7bdc6;
+      font-size: 10px;
+    }
+
+    .excel-toolbar span {
+      padding: 5px 9px;
+      border: 1px solid #343a44;
+      background: #171b21;
+    }
+
+    .calculator {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .sheet-panel {
+      min-width: 0;
+      padding: 20px;
+      border: 1px solid #343a44;
+      background: #15191f;
+    }
+
+    .sheet-panel h3 {
+      margin: 0 0 18px;
+      font-size: 14px;
+    }
+
+    .field {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(90px, 1fr);
+      gap: 12px;
+      align-items: center;
+      margin: 12px 0;
+      font-size: 11px;
+    }
+
+    .field label { color: #b7bdc6; }
+
+    .fake-input {
+      padding: 8px;
+      border: 1px solid #394d3d;
+      background: #1a2820;
+      color: #d9f0d9;
+      text-align: right;
+    }
+
+    .result-panel {
+      padding: 20px;
+      border: 1px solid #435a47;
+      background: #17221b;
+    }
+
+    .result-label {
+      color: #a9bcae;
+      font-size: 11px;
+    }
+
+    .result-value {
+      margin: 8px 0;
+      color: #d9f0d9;
+      font-size: clamp(26px, 4vw, 40px);
+      line-height: 1.2;
+      letter-spacing: -.04em;
+    }
+
+    .result-note, .mockup-note {
+      color: #929ba8;
+      font-size: 10px;
+      line-height: 1.7;
+    }
+
+    .mockup-note { margin: 18px 0 0; }
+
+    .detail-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 30px;
+    }
+
+    .detail-item {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail-item h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+    }
+
+    .detail-item p {
+      margin: 0;
+      color: #b7bdc6;
+      font-size: 13px;
+    }
+
+    .callout {
+      padding: 25px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .callout p { margin: 0; color: #c1c6ce; }
+    .callout p + p { margin-top: 12px; }
+
+    .skill {
+      font-size: 11px;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+
+    .bottom-nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 34px 0;
+    }
+
+    .back-link { color: #d9dde3; font-size: 13px; }
+    .back-link span { color: var(--muted); }
+
+    footer {
+      padding: 22px 0 36px;
+      color: #777f8a;
+      font-size: 11px;
+    }
+
+    @media (max-width: 700px) {
+      .container { width: calc(100% - 32px); }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 18px 0;
+        gap: 12px;
+      }
+
+      .nav-links { gap: 15px; }
+      .hero { padding: 68px 0 52px; }
+      section { padding: 54px 0; }
+
+      .grid-2, .workflow, .calculator, .detail-list {
+        grid-template-columns: 1fr;
+      }
+
+      .panel { padding: 21px; }
+      .mockup-body { padding: 12px; }
+      .bottom-nav { flex-direction: column; }
+    }
+  </style>
+</head>
+
+<body>
+<header>
+  <div class="container nav">
+    <a class="brand" href="../index.html">PQ / PORTFOLIO</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="../index.html">Home</a>
+      <a href="bi-reporting.html">BI & Reporting</a>
+      <a href="crm-migration.html">CRM Migration</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <div class="hero">
+    <div class="container">
+      <p class="eyebrow">Business Analysis & Decision Support</p>
+      <h1>Making freight pricing simpler for customers.</h1>
+      <p class="hero-description">
+        An Excel-based self-service calculator designed to help customers
+        access applicable freight rates from their existing quotations
+        without repeatedly contacting the Local Sales team.
+      </p>
+      <div class="hero-meta">
+        <span class="pill">Excel</span>
+        <span class="pill">Pricing Logic</span>
+        <span class="pill">Process Improvement</span>
+        <span class="pill">Customer Self-Service</span>
+        <span class="pill">Local Sales</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">01 / The challenge</p>
+        <h2>Rates were available. Accessing them took extra effort.</h2>
+        <p>
+          Customers who had already received a quotation frequently contacted
+          Local Sales by phone or email to ask for a rate covered by that
+          quotation. Each enquiry required additional communication and
+          repeated manual work.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="panel">
+          <span class="number">THE CUSTOMER</span>
+          <h3>Repeated enquiries</h3>
+          <p>
+            Customers needed a straightforward way to check applicable
+            rates for their shipments without having to contact their
+            sales representative every time.
+          </p>
+        </article>
+
+        <article class="panel">
+          <span class="number">THE SALES TEAM</span>
+          <h3>Repetitive manual work</h3>
+          <p>
+            Sales representatives spent time responding to rate enquiries
+            and looking up information that had already been provided
+            through customer quotations.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">02 / My approach</p>
+        <h2>A practical idea based on first-hand experience.</h2>
+        <p>
+          After two years in a sales role where I personally handled
+          shipment pricing enquiries by email, I recognised an opportunity
+          to simplify the process. I independently came up with the idea
+          and built the original Excel calculator from scratch.
+        </p>
+      </div>
+
+      <div class="workflow">
+        <div class="workflow-step">
+          <strong>01. Understand the problem</strong>
+          <span>Identify repeated rate enquiries and unnecessary manual steps.</span>
+        </div>
+        <div class="workflow-step">
+          <strong>02. Structure the solution</strong>
+          <span>Organise customer-specific rates and define the lookup logic.</span>
+        </div>
+        <div class="workflow-step">
+          <strong>03. Build the calculator</strong>
+          <span>Create an Excel tool customers could use independently.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">03 / The solution</p>
+        <h2>A customer-specific Excel pricing tool.</h2>
+        <p>
+          After preparing a quotation, the sales representative could
+          provide the customer with a calculator based on the applicable
+          rates. Customers entered shipment details, while Excel formulas
+          looked up the matching rate from a separate, hidden worksheet
+          containing the rate table.
+        </p>
+      </div>
+
+      <div class="mockup" role="img" aria-label="Fictional illustration of an Excel freight pricing calculator">
+        <div class="mockup-top">
+          <div>
+            <div class="mockup-title">CUSTOMER FREIGHT PRICING CALCULATOR</div>
+            <div class="mockup-subtitle">Illustrative Excel-style mockup · Fictional data</div>
+          </div>
+          <div class="mockup-subtitle">Customer self-service</div>
+        </div>
+
+        <div class="mockup-body">
+          <div class="excel-toolbar">
+            <span>File</span>
+            <span>Home</span>
+            <span>Formulas</span>
+            <span>Data</span>
+            <span>Customer rate lookup</span>
+          </div>
+
+          <div class="calculator">
+            <div class="sheet-panel">
+              <h3>Shipment details</h3>
+
+              <div class="field">
+                <label>Origin postal code</label>
+                <span class="fake-input">00-101</span>
+              </div>
+              <div class="field">
+                <label>Destination postal code</label>
+                <span class="fake-input">00-202</span>
+              </div>
+              <div class="field">
+                <label>Total weight (kg)</label>
+                <span class="fake-input">450</span>
+              </div>
+              <div class="field">
+                <label>Number of pallets</label>
+                <span class="fake-input">2</span>
+              </div>
+              <div class="field">
+                <label>Dimensions</label>
+                <span class="fake-input">Entered by user</span>
+              </div>
+            </div>
+
+            <div class="sheet-panel">
+              <h3>Calculated result</h3>
+              <div class="result-panel">
+                <div class="result-label">Illustrative result</div>
+                <div class="result-value">Rate found</div>
+                <div class="result-note">
+                  The calculator looks up the applicable rate using
+                  the entered shipment details and the customer's
+                  quotation data.
+                </div>
+              </div>
+              <p class="mockup-note">
+                Example interface only. No real rates are shown.
+              </p>
+            </div>
+          </div>
+
+          <p class="mockup-note">
+            Conceptual recreation for portfolio purposes. The interface,
+            postal codes and entries are fictional and do not reproduce
+            the original workbook or any customer pricing.
+          </p>
+        </div>
+      </div>
+
+      <div class="detail-list">
+        <article class="detail-item">
+          <h3>Customer-specific rate table</h3>
+          <p>
+            Applicable rates were stored on a separate hidden worksheet
+            within the workbook.
+          </p>
+        </article>
+
+        <article class="detail-item">
+          <h3>Formula-based lookup</h3>
+          <p>
+            Excel lookup formulas, such as INDEX or VLOOKUP, retrieved
+            the relevant rate from the stored table.
+          </p>
+        </article>
+
+        <article class="detail-item">
+          <h3>Shipment parameters</h3>
+          <p>
+            Customers entered origin and destination postal codes,
+            weight, dimensions and/or pallet count.
+          </p>
+        </article>
+
+        <article class="detail-item">
+          <h3>Calculated pricing</h3>
+          <p>
+            The calculator applied the relevant rate logic to the
+            shipment parameters to return the applicable price.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">04 / The impact</p>
+        <h2>Less repetitive work. More independent access.</h2>
+        <p>
+          The calculator gave customers served by Local Sales a practical
+          way to check rates already covered by their quotations, while
+          reducing the need for repeated manual enquiries.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="panel">
+          <span class="number">FOR CUSTOMERS</span>
+          <h3>Self-service access</h3>
+          <ul>
+            <li>Check applicable rates independently.</li>
+            <li>Reduce the need for repeated phone calls and emails.</li>
+            <li>Access rate information more conveniently.</li>
+          </ul>
+        </article>
+
+        <article class="panel">
+          <span class="number">FOR LOCAL SALES</span>
+          <h3>Less repetitive manual work</h3>
+          <ul>
+            <li>Spend less time answering repeated rate enquiries.</li>
+            <li>Reduce manual rate lookups and related error risk.</li>
+            <li>Make more efficient use of sales team time.</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="callout" style="margin-top: 16px;">
+        <p>
+          <strong>From local initiative to a broader concept.</strong>
+        </p>
+        <p>
+          The original calculator was my own solution for customers
+          served by Local Sales. Management later became aware of the
+          concept, which was adopted more broadly within the company.
+          The wider implementation was delivered by IT; I am not
+          claiming ownership of that later implementation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">05 / Skills demonstrated</p>
+        <h2>Turning a recurring business problem into a usable tool.</h2>
+      </div>
+
+      <div class="callout">
+        <p>
+          This project demonstrates how first-hand operational experience
+          can reveal opportunities for process improvement — and how a
+          practical, independently developed solution can make an everyday
+          business process simpler for both customers and colleagues.
+        </p>
+      </div>
+
+      <div class="skills">
+        <span class="skill">Business Analysis</span>
+        <span class="skill">Excel</span>
+        <span class="skill">Lookup Formulas</span>
+        <span class="skill">Pricing Logic</span>
+        <span class="skill">Process Improvement</span>
+        <span class="skill">Customer Experience</span>
+        <span class="skill">Problem Solving</span>
+        <span class="skill">Sales Operations</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container bottom-nav">
+    <a class="back-link" href="../index.html">
+      <span>←</span> Back to portfolio
+    </a>
+    <a class="back-link" href="bi-reporting.html">
+      Related experience: BI & Reporting <span>↗</span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    Independent portfolio case study · Illustrative mockup · 2026
+  </div>
+</footer>
+</body>
+</html>
