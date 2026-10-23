@@ -33,10 +33,29 @@ nav {
   justify-content:space-between;
   gap:20px;
 }
+
 .logo { font-size:15px; font-weight:800; }
 .logo span { color:#888; }
-.back { font-size:13px; color:var(--muted); }
-.back:hover { color:white; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.nav-links a:hover {
+  color: var(--text);
+}
+
+@media (max-width:650px) {
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+}
+
 .hero { padding:90px 0 65px; }
 .kicker {
   color:#999;
@@ -108,10 +127,15 @@ footer .container { display:flex; justify-content:space-between; gap:12px; flex-
 </style>
 </head>
 <body>
+
 <header>
   <nav class="container">
-    <a class="logo" href="../index.html">PQ <span>/</span> DATAMATE</a>
-    <a class="back" href="../index.html">← Back to projects</a>
+    <a class="logo" href="../index.html">PQ <span>/</span> PORTFOLIO</a>
+    <div class="nav-links">
+      <a href="../index.html">Home</a>
+      <a href="../business-analysis.html">Projects</a>
+      <a href="../about.html">About</a>
+    </div>
   </nav>
 </header>
 
