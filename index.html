@@ -253,6 +253,48 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: #777; font-s
   border-top: 1px solid #303030;
 }
 
+.project-link {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: 22px;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.project-link:hover {
+  color: inherit;
+  border-color: #66758b;
+  background: #141820;
+}
+
+.project-link h3,
+.project-link .project-cta {
+  transition: color 0.2s ease;
+}
+
+.project-link:hover h3,
+.project-link:hover .project-cta {
+  color: var(--accent);
+}
+
+.project-link .project-cta {
+  margin-bottom: 0;
+  font-size: 13px;
+}
+
+@media (max-width: 700px) {
+  .project-link {
+    grid-template-columns: 30px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .project-link .project-meta {
+    grid-column: 2;
+  }
+}
+
+  
 </style>
 </head>
 <body>
@@ -354,13 +396,12 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: #777; font-s
 
 
     
-      <article class="project">
+
+      <a class="project project-link" href="business-analysis.html">
         <div class="project-no">04</div>
         <div>
           <span class="project-label">Business analysis / Process improvement</span>
-          <h3>
-            <a href="business-analysis.html">Business Analysis &amp; Decision Support</a>
-          </h3>
+          <h3>Business Analysis &amp; Decision Support</h3>
           <p>
             Practical business solutions spanning pricing tools, shipment
             analysis, sales performance reporting, customer research and
@@ -371,15 +412,14 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: #777; font-s
             <li>Identified opportunities to simplify processes and improve usability.</li>
             <li>Connected operational needs with practical solutions.</li>
           </ul>
-          <p>
-            <a href="business-analysis.html">Explore case studies →</a>
-          </p>
+          <p class="project-cta">Explore case studies →</p>
         </div>
         <div class="project-meta">
           BUSINESS SOLUTIONS<br><br>
           Excel · Analysis · Process Improvement
         </div>
-      </article>
+      </a>
+
     </div>
     <p class="note"></p>
   </div>
