@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipment Flow Analysis &amp; Competitive Pricing | PQ DataMate</title>
+<style>
+:root{--bg:#0b0d11;--panel:#11151c;--panel2:#151b24;--text:#edf1f7;--muted:#a1aaba;--line:#29313d;--accent:#9bbcff;--green:#9ed8b0;--red:#f0a7a7}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;line-height:1.65}
+a{color:inherit}
+.wrap{width:min(1080px,calc(100% - 40px));margin:auto}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:25px 0;border-bottom:1px solid var(--line);font-size:13px;color:var(--muted)}
+.brand{font-weight:750;letter-spacing:.04em;color:var(--text);text-decoration:none}
+.topbar nav{display:flex;gap:22px;flex-wrap:wrap}
+.topbar nav a{text-decoration:none;color:var(--muted)}
+.topbar nav a:hover,.back:hover{color:var(--accent)}
+.hero{padding:74px 0 54px;max-width:850px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:750}
+h1{font-size:clamp(36px,6vw,62px);line-height:1.08;letter-spacing:-.045em;margin:18px 0 20px;max-width:800px}
+.lead{font-size:clamp(17px,2vw,21px);color:#c1cad7;max-width:760px;margin:0}
+.meta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.pill{border:1px solid var(--line);border-radius:999px;padding:6px 11px;font-size:12px;color:#c3ccda}
+.scope{margin:0 0 58px;padding:20px 22px;background:#121923;border:1px solid #344154;border-radius:14px}
+.scope strong{display:block;font-size:14px;margin-bottom:5px}
+.scope p{margin:0;color:#c0cad8;font-size:14px}
+section{padding:0 0 52px}
+.section-label{color:var(--accent);font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:750;margin-bottom:10px}
+h2{font-size:clamp(24px,3vw,34px);line-height:1.2;letter-spacing:-.025em;margin:0 0 18px}
+p{color:#c0c8d4;margin:0 0 14px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:15px;padding:23px}
+.card h3{font-size:17px;margin:0 0 9px}
+.card p:last-child{margin-bottom:0}
+ul{margin:12px 0 0;padding-left:20px;color:#c0c8d4}
+li{padding:0 0 8px}
+.analysis{background:linear-gradient(135deg,#121923,#0f1319);border:1px solid var(--line);border-radius:18px;padding:24px;margin-top:22px}
+.analysis-head{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:20px}
+.analysis-head h3{margin:0;font-size:18px}
+.fictional{font-size:11px;text-transform:uppercase;letter-spacing:.1em;color:var(--accent);border:1px solid #40516c;border-radius:999px;padding:5px 9px;white-space:nowrap}
+.chart-legend{display:flex;gap:18px;flex-wrap:wrap;color:var(--muted);font-size:12px;margin-bottom:16px}
+.dot{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:6px}
+.lane{padding:16px 0;border-top:1px solid var(--line)}
+.lane-name{font-size:14px;font-weight:650;margin-bottom:10px}
+.barline{display:grid;grid-template-columns:115px minmax(0,1fr) 40px;align-items:center;gap:10px;margin:7px 0;font-size:12px;color:var(--muted)}
+.track{height:10px;border-radius:999px;background:#252d38;overflow:hidden}
+.bar{height:100%;border-radius:999px}
+.bar.our{background:#83aaf7}.bar.comp{background:#7e8998}
+.bar-value{text-align:right;color:var(--text);font-variant-numeric:tabular-nums}
+.note{font-size:12px;color:#8995a6;margin:16px 0 0}
+.outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.outcome{padding:17px;border:1px solid var(--line);border-radius:12px;background:#0e1218}
+.outcome strong{display:block;font-size:14px;margin-bottom:6px}
+.outcome span{font-size:13px;color:var(--muted)}
+.skills{display:flex;flex-wrap:wrap;gap:9px;margin-top:15px}
+.skill{font-size:12px;color:#d0d8e4;border:1px solid var(--line);border-radius:8px;padding:7px 10px;background:#10141b}
+footer{border-top:1px solid var(--line);padding:28px 0 42px;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--muted);font-size:13px}
+.back{text-decoration:none;color:var(--accent)}
+@media(max-width:700px){.wrap{width:min(100% - 28px,1080px)}.topbar{align-items:flex-start;gap:15px;flex-direction:column}.hero{padding:52px 0 40px}.grid,.outcomes{grid-template-columns:1fr}.card,.analysis{padding:18px}.barline{grid-template-columns:92px minmax(0,1fr) 32px}.topbar nav{gap:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="topbar">
+<a class="brand" href="../index.html">PQ DATAMATE</a>
+<nav aria-label="Main navigation"><a href="../index.html">Portfolio</a><a href="../business-analysis.html">Business Analysis</a><a href="../index.html#contact">Contact</a></nav>
+</header>
+
+<main>
+<div class="hero">
+<div class="eyebrow">Case study 02 · Business Analysis &amp; Decision Support</div>
+<h1>Shipment Flow Analysis &amp; Competitive Pricing</h1>
+<p class="lead">Turning real shipment data into practical pricing insights that helped Local Sales evaluate opportunities and compete for customer volume.</p>
+<div class="meta"><span class="pill">Local Sales support</span><span class="pill">Excel formulas</span><span class="pill">Pivot tables</span><span class="pill">Pricing analysis</span></div>
+</div>
+
+<div class="scope">
+<strong>Scope clarification — Local Sales</strong>
+<p>This was a local sales-support activity, not a central tender-management or pricing-team function. I worked behind the scenes to help Local Sales representatives assess customer shipment flows and evaluate proposed rates. I did not contact customers or lead negotiations.</p>
+</div>
+
+<section>
+<div class="section-label">01 / The challenge</div>
+<h2>Make a complex shipment flow easier to price</h2>
+<p>Sales representatives sometimes received a prospective customer’s shipment-flow data, often exported from a competitor’s system. The files contained real shipment parameters such as weight, quantity, volume, loading location and delivery destination.</p>
+<p>The task was to calculate what that same flow would cost under our proposed offer and understand how competitive the total would be — as well as how the result differed by transport direction.</p>
+</section>
+
+<section>
+<div class="section-label">02 / My role</div>
+<h2>Behind-the-scenes analytical support</h2>
+<div class="grid">
+<div class="card"><h3>Prepare and calculate</h3><p>I used Excel formulas to apply our proposed rates to the customer’s shipment data and calculate the resulting costs across the flow.</p></div>
+<div class="card"><h3>Summarise and compare</h3><p>I used pivot tables to aggregate results and compare pricing across different directions and shipment groups, making the findings easier for the sales representative to use.</p></div>
+</div>
+</section>
+
+<section>
+<div class="section-label">03 / The approach</div>
+<h2>From raw shipment data to a pricing decision</h2>
+<div class="grid">
+<div class="card"><h3>01. Analyse the flow</h3><p>Review shipment weights, quantities, volumes and origin–destination combinations in the customer’s file.</p></div>
+<div class="card"><h3>02. Apply our proposed rates</h3><p>Use Excel formulas to recalculate the same shipment flow using the rates prepared for the prospective customer.</p></div>
+<div class="card"><h3>03. Compare by direction</h3><p>Use pivot tables to assess the overall cost and identify lanes where our offer was cheaper or more expensive than the competitor’s.</p></div>
+<div class="card"><h3>04. Support rate adjustments</h3><p>Share the analysis with the sales representative, who could review proposed rates and decide how to position the offer in negotiations.</p></div>
+</div>
+
+<div class="analysis">
+<div class="analysis-head"><h3>Example of a lane-level price comparison</h3><span class="fictional">Fictional data</span></div>
+<div class="chart-legend"><span><i class="dot" style="background:#83aaf7"></i>Our proposed offer</span><span><i class="dot" style="background:#7e8998"></i>Competitor baseline</span></div>
+<div class="lane">
+<div class="lane-name">Germany → Poland</div>
+<div class="barline"><span>Our offer</span><div class="track"><div class="bar our" style="width:75%"></div></div><span class="bar-value">90</span></div>
+<div class="barline"><span>Competitor</span><div class="track"><div class="bar comp" style="width:83.33%"></div></div><span class="bar-value">100</span></div>
+</div>
+<div class="lane">
+<div class="lane-name">Poland → Denmark</div>
+<div class="barline"><span>Our offer</span><div class="track"><div class="bar our" style="width:93.33%"></div></div><span class="bar-value">112</span></div>
+<div class="barline"><span>Competitor</span><div class="track"><div class="bar comp" style="width:83.33%"></div></div><span class="bar-value">100</span></div>
+</div>
+<div class="lane">
+<div class="lane-name">Domestic Poland</div>
+<div class="barline"><span>Our offer</span><div class="track"><div class="bar our" style="width:87.5%"></div></div><span class="bar-value">105</span></div>
+<div class="barline"><span>Competitor</span><div class="track"><div class="bar comp" style="width:83.33%"></div></div><span class="bar-value">100</span></div>
+</div>
+<p class="note">Illustrative cost index only: competitor baseline = 100. These numbers are fictional and do not represent actual customer, competitor or company pricing. The real analysis depended on the shipment mix and the proposed rates.</p>
+</div>
+</section>
+
+<section>
+<div class="section-label">04 / Business impact</div>
+<h2>Show where the offer could win</h2>
+<p>The analysis gave Local Sales a clearer view of the commercial opportunity. Sometimes the proposed rates could support a lower total cost; in other cases, the strongest opportunity was limited to selected directions. That helped the sales representative focus on where the offer could compete and potentially win part of the customer’s shipment volume.</p>
+<div class="outcomes">
+<div class="outcome"><strong>Evidence-based pricing</strong><span>Compared proposed rates against the customer’s actual shipment profile.</span></div>
+<div class="outcome"><strong>Lane-level insight</strong><span>Separated competitive directions from those where our rates were less attractive.</span></div>
+<div class="outcome"><strong>Sales decision support</strong><span>Equipped Local Sales with analysis to inform offer adjustments and customer discussions.</span></div>
+</div>
+</section>
+
+<section>
+<div class="section-label">05 / Skills demonstrated</div>
+<h2>Tools and capabilities</h2>
+<div class="skills"><span class="skill">Microsoft Excel</span><span class="skill">Excel formulas</span><span class="skill">Pivot tables</span><span class="skill">Shipment-flow analysis</span><span class="skill">Pricing comparison</span><span class="skill">Commercial analysis</span><span class="skill">Sales support</span><span class="skill">Data-driven decision support</span></div>
+</section>
+</main>
+
+<footer><a class="back" href="../business-analysis.html">← Back to Business Analysis &amp; Decision Support</a><span>Portfolio case study · Illustrative data only</span></footer>
+</div>
+</body>
+</html>
