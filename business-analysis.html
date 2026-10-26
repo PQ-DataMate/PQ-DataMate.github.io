@@ -51,17 +51,39 @@
 
 
     .brand {
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: .12em;
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -.4px;
+      white-space: nowrap;
+    }
+
+    .brand-golden { color: #d8ad45; }
+    .brand-rest { color: #f2f3f5; }
+    .brand-dev { color: #888; }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-left: auto;
     }
 
     .nav-links {
       display: flex;
+      align-items: center;
       flex-wrap: wrap;
       gap: 22px;
       color: var(--muted);
       font-size: 12px;
+    }
+
+    .nav-dog {
+      display: block;
+      width: 42px;
+      height: 26px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      opacity: .96;
     }
 
     .hero {
@@ -279,12 +301,15 @@
 
 <header>
   <div class="container nav">
-    <a class="brand" href="index.html">PQ / PORTFOLIO</a>
-    <nav class="nav-links" aria-label="Main navigation">
-      <a href="index.html">Home</a>
-      <a href="business-analysis.html">Projects</a>
-      <a href="about.html">About</a>
-    </nav>
+    <a class="brand" href="index.html"><span class="brand-golden">GOLDEN</span><span class="brand-rest">OPS</span><span class="brand-dev">.DEV</span></a>
+    <div class="nav-right">
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="index.html">Home</a>
+        <a href="business-analysis.html">Projects</a>
+        <a href="about.html">About</a>
+      </nav>
+      <img class="nav-dog" src="images/goldenops-dog.png" alt="GoldenOps golden retriever emblem" width="42" height="26">
+    </div>
   </div>
 </header>
 
