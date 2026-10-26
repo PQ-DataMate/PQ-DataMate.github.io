@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="A little about the person behind PQ-DataMate - business analysis, practical solutions and continuous learning.">
-  <title>About Me - PQ-DataMate</title>
+  <meta name="description" content="A little about the person behind GoldenOps.dev - business analysis, practical solutions and continuous learning.">
+  <title>About Me - GoldenOps.dev</title>
   <style>
     :root {
       --bg: #050505;
@@ -47,12 +46,40 @@
       gap: 24px;
     }
 
-    .logo { font-size: 16px; font-weight: 800; letter-spacing: -.4px; }
-    .logo span { color: #888; }
+    .logo {
+      font-size: 16px;
+      font-weight: 800;
+      letter-spacing: -.4px;
+      white-space: nowrap;
+    }
+    .logo .brand-golden { color: #d8ad45; }
+    .logo .brand-rest { color: #f5f5f5; }
+    .logo .brand-dev { color: #888; }
 
-    .navlinks { display: flex; gap: 24px; flex-wrap: wrap; }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-left: auto;
+    }
+
+    .navlinks {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
     .navlinks a { color: var(--muted); font-size: 13px; }
     .navlinks a:hover { color: var(--text); }
+
+    .nav-dog {
+      display: block;
+      width: 42px;
+      height: 26px;
+      object-fit: contain;
+      flex: 0 0 auto;
+      opacity: .96;
+    }
 
     main { min-height: calc(100vh - 150px); }
 
@@ -73,12 +100,12 @@
       justify-content: center;
     }
     .portrait img {
-  width: 100%;
-  height: 100%;
-  min-height: 370px;
-  object-fit: cover;
-  display: block;
-}
+      width: 100%;
+      height: 100%;
+      min-height: 370px;
+      object-fit: cover;
+      display: block;
+    }
 
     .initials {
       font-size: 88px;
@@ -133,13 +160,26 @@
     }
 
     @media(max-width: 760px) {
-      nav { padding: 16px 0; align-items: flex-start; flex-direction: column; }
+      nav {
+        padding: 16px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        position: relative;
+        padding-right: 52px;
+      }
+      .nav-right { width: 100%; margin-left: 0; gap: 12px; }
       .navlinks { gap: 15px; }
+      .navlinks a { font-size: 12px; }
+      .nav-dog {
+        position: absolute;
+        right: 0;
+        top: 18px;
+        width: 36px;
+        height: 23px;
+      }
       .about { grid-template-columns: 1fr; gap: 32px; padding: 60px 0 80px; }
       .portrait { min-height: 240px; }
-      .portrait img {
-  min-height: 240px;
-}
+      .portrait img { min-height: 240px; }
       h1 { letter-spacing: -2px; }
     }
   </style>
@@ -147,25 +187,26 @@
 <body>
   <header>
     <nav class="container">
-      <a class="logo" href="index.html">PQ<span> / </span>DATAMATE</a>
+      <a class="logo" href="index.html"><span class="brand-golden">GOLDEN</span><span class="brand-rest">OPS</span><span class="brand-dev">.DEV</span></a>
 
-
-<div class="navlinks">
-  <a href="index.html#work">Work</a>
-  <a href="index.html#approach">Approach</a>
-  <a href="index.html#skills">Tools</a>
-  <a href="index.html#contact">Contact</a>
-  <a href="about.html">About</a>
-</div>
-
+      <div class="nav-right">
+        <div class="navlinks" aria-label="Main navigation">
+          <a href="index.html#work">Work</a>
+          <a href="index.html#approach">Approach</a>
+          <a href="index.html#skills">Tools</a>
+          <a href="index.html#contact">Contact</a>
+          <a href="about.html">About</a>
+        </div>
+        <img class="nav-dog" src="images/goldenops-dog.png" alt="GoldenOps golden retriever emblem" width="42" height="26">
+      </div>
     </nav>
   </header>
 
   <main>
     <section class="container about">
-<div class="portrait">
-  <img src="images/ProfilePic_OCT26_2.png" alt="Portrait of PQ-DataMate">
-</div>
+      <div class="portrait">
+        <img src="images/ProfilePic_OCT26_2.png" alt="Portrait of PQ-DataMate">
+      </div>
 
       <div class="copy">
         <div class="kicker">A LITTLE ABOUT ME</div>
@@ -191,10 +232,9 @@
 
   <footer>
     <div class="container footer-inner">
-      <span>© 2026 PQ-DataMate</span>
+      <span>© 2026 GoldenOps.dev</span>
       <span>Less presentation. More implementation.</span>
     </div>
   </footer>
 </body>
 </html>
-
