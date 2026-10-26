@@ -41,8 +41,10 @@ nav {
   align-items: center;
   gap: 24px;
 }
-.logo { font-size: 16px; font-weight: 800; letter-spacing: -.4px; }
+.logo { font-size: 16px; font-weight: 800; letter-spacing: -.4px; white-space: nowrap; }
 .logo span { color: #888; }
+.nav-dog { display: block; width: 42px; height: 26px; object-fit: contain; flex: 0 0 auto; opacity: .96; }
+.navlinks { align-items: center; }
 .navlinks { display: flex; gap: 24px; flex-wrap: wrap; }
 .navlinks a { color: var(--muted); font-size: 13px; }
 .navlinks a:hover { color: var(--white); }
@@ -198,7 +200,8 @@ h2 {
 footer { border-top: 1px solid var(--line); padding: 25px 0; color: #777; font-size: 11px; }
 .footer-inner { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
 @media(max-width: 760px) {
-  nav { padding: 16px 0; align-items: flex-start; flex-direction: column; }
+  nav { padding: 16px 0; align-items: flex-start; flex-direction: column; position: relative; padding-right: 52px; }
+  .nav-dog { position: absolute; right: 0; top: 18px; width: 36px; height: 23px; }
   .navlinks { gap: 15px; }
   .hero { grid-template-columns: 1fr; padding-top: 65px; gap: 35px; }
   h1 { letter-spacing: -2px; }
@@ -300,7 +303,7 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: #777; font-s
 <body>
 <header>
   <nav class="container">
-    <a class="logo" href="#home">PQ<span> / </span>DATAMATE</a>
+    <a class="logo" href="#home">GOLDENOPS<span>.DEV</span></a>
 
 <div class="navlinks">
   <a href="#work">Work</a>
@@ -309,6 +312,7 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: #777; font-s
   <a href="#contact">Contact</a>
   <a href="about.html">About</a>
 </div>
+<img class="nav-dog" src="images/goldenops-dog.png" alt="GoldenOps golden retriever emblem" width="42" height="26">
 
   </nav>
 </header>
