@@ -1,0 +1,470 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Business analysis, decision support and process improvement case studies by PQ.">
+  <title>Business Analysis & Decision Support | PQ - Portfolio</title>
+
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --surface: #111419;
+      --text: #f2f3f5;
+      --muted: #a0a6b0;
+      --line: #2b3038;
+      --accent: #c5d5ef;
+      --max-width: 1040px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 15px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    a:hover { color: var(--accent); }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 48px));
+      margin: 0 auto;
+    }
+
+    header { border-bottom: 1px solid var(--line); }
+
+   
+.nav {
+  min-height: 76px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: .12em;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 22px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hero {
+      padding: 100px 0 76px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow {
+      margin: 0 0 20px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 850px;
+      margin: 0;
+      font-size: clamp(40px, 6vw, 66px);
+      line-height: 1.08;
+      letter-spacing: -.05em;
+      font-weight: 600;
+    }
+
+    .hero-description {
+      max-width: 720px;
+      margin: 26px 0 0;
+      color: #bdc2ca;
+      font-size: 17px;
+      line-height: 1.85;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .pill {
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      color: #c5cad2;
+      font-size: 10px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    section {
+      padding: 65px 0 76px;
+    }
+
+    .section-heading { margin-bottom: 30px; }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(26px, 4vw, 36px);
+      line-height: 1.2;
+      letter-spacing: -.035em;
+      font-weight: 600;
+    }
+
+    .section-heading > p:last-child {
+      max-width: 700px;
+      margin: 14px 0 0;
+      color: var(--muted);
+    }
+
+    .project-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .project-card {
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr) auto;
+      gap: 22px;
+      align-items: start;
+      padding: 27px;
+      border: 1px solid var(--line);
+      background: var(--surface);
+      transition: border-color .2s ease, background .2s ease;
+    }
+
+    a.project-card:hover {
+      border-color: #66758b;
+      background: #141820;
+    }
+
+    .project-number {
+      color: #d7e2f3;
+      font-size: 12px;
+      letter-spacing: .1em;
+      padding-top: 3px;
+    }
+
+    .project-category {
+      margin: 0 0 7px;
+      color: var(--muted);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .project-card h3 {
+      margin: 0;
+      font-size: 21px;
+      line-height: 1.35;
+      font-weight: 600;
+      letter-spacing: -.02em;
+    }
+
+    .project-description {
+      max-width: 650px;
+      margin: 10px 0 0;
+      color: #b7bdc6;
+      font-size: 13px;
+    }
+
+    .project-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 15px;
+    }
+
+    .project-tags span {
+      padding: 4px 8px;
+      border: 1px solid #303640;
+      color: #aeb7c4;
+      font-size: 10px;
+    }
+
+    .project-action {
+      padding-top: 4px;
+      color: #c5d5ef;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .coming-soon {
+      align-self: start;
+      padding: 5px 8px;
+      border: 1px solid #343a44;
+      color: #929ba8;
+      font-size: 9px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .note {
+      margin-top: 28px;
+      padding: 20px 22px;
+      border-left: 2px solid #56657b;
+      background: #111419;
+      color: #aeb7c4;
+      font-size: 12px;
+    }
+
+    .bottom-nav {
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .back-link { font-size: 13px; }
+    .back-link span { color: var(--muted); }
+
+    footer {
+      padding: 22px 0 36px;
+      color: #777f8a;
+      font-size: 11px;
+    }
+
+    @media (max-width: 700px) {
+      .container { width: calc(100% - 32px); }
+
+      
+
+.nav {
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: center;
+  padding: 18px 0;
+  gap: 12px;
+}
+
+
+
+      .nav-links { gap: 15px; }
+      .hero { padding: 68px 0 52px; }
+      section { padding: 48px 0 56px; }
+
+      .project-card {
+        grid-template-columns: 30px minmax(0, 1fr);
+        gap: 12px;
+        padding: 20px;
+      }
+
+      .project-action, .coming-soon {
+        grid-column: 2;
+        justify-self: start;
+      }
+
+      .project-card h3 { font-size: 19px; }
+    }
+  </style>
+</head>
+
+<body>
+
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="index.html">PQ / PORTFOLIO</a>
+    <nav class="nav-links" aria-label="Main navigation">
+      <a href="index.html">Home</a>
+      <a href="business-analysis.html">Projects</a>
+      <a href="about.html">About</a>
+    </nav>
+  </div>
+</header>
+
+
+
+<main>
+  <div class="hero">
+    <div class="container">
+      <p class="eyebrow">04 / Business Analysis & Decision Support</p>
+      <h1>Turning business problems into practical solutions.</h1>
+      <p class="hero-description">
+        A selection of projects focused on process improvement, pricing
+        tools, sales analysis, customer research and collaboration between
+        business teams and IT.
+      </p>
+      <div class="hero-meta">
+        <span class="pill">Business Analysis</span>
+        <span class="pill">Process Improvement</span>
+        <span class="pill">Excel</span>
+        <span class="pill">Decision Support</span>
+      </div>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Selected case studies</p>
+        <h2>Business needs. Practical solutions.</h2>
+        <p>
+          Each case study describes the business challenge, my individual
+          contribution, the approach taken and the value of the solution.
+        </p>
+      </div>
+
+      <div class="project-list">
+
+        <a class="project-card project-link" href="projects/freight-pricing.html">
+          <div class="project-number">01</div>
+          <div>
+            <p class="project-category">Excel / Pricing / Customer Experience</p>
+            <h3>Customer Self-Service Freight Pricing Calculator</h3>
+            <p class="project-description">
+              Independently designed and built an Excel calculator that
+              helped Local Sales customers check applicable quoted freight
+              rates without repeatedly contacting their sales representative.
+            </p>
+            <div class="project-tags">
+              <span>Excel</span>
+              <span>Pricing Logic</span>
+              <span>Process Improvement</span>
+              <span>Self-Service</span>
+            </div>
+          </div>
+          <span class="project-cta">View case study →</span>
+        </a>
+
+       
+<a class="project-card project-link" href="projects/shipment-flow-analysis.html">
+  <div class="project-number">02</div>
+  <div>
+    <p class="project-category">Local Sales / Data Analysis / Pricing</p>
+    <h3>Shipment Flow Analysis</h3>
+    <p class="project-description">
+      Analysing prospective customers' shipment flows using Excel
+      formulas and pivot tables to compare proposed rates, identify
+      competitive transport lanes and support Local Sales decisions.
+    </p>
+    <div class="project-tags">
+      <span>Excel</span>
+      <span>Pricing Analysis</span>
+      <span>Local Sales Support</span>
+    </div>
+  </div>
+  <span class="project-cta">View case study →</span>
+</a>
+
+
+
+<a class="project-card project-link" href="projects/sales-performance-pta.html">
+  <div class="project-number">03</div>
+  <div>
+    <p class="project-category">Sales Performance / KPI Reporting / Excel</p>
+    <h3>Sales Performance &amp; PTA Reporting</h3>
+    <p class="project-description">
+      Monthly analysis of sales targets versus actual customer
+      turnover, using CRM exports and Excel reporting across
+      sales representatives, branches, regions and Poland.
+    </p>
+    <div class="project-tags">
+      <span>CRM Data</span>
+      <span>Excel</span>
+      <span>KPI Reporting</span>
+    </div>
+  </div>
+  <span class="project-cta">View case study →</span>
+</a>
+
+
+        
+<a class="project-card project-link" href="projects/customer-research-nps.html">
+  <div class="project-number">04</div>
+  <div>
+    <p class="project-category">Customer Research / NPS / Process Improvement</p>
+    <h3>Customer Research &amp; NPS Analysis</h3>
+    <p class="project-description">
+      Coordinating quarterly customer research, from external
+      provider selection and survey design to reporting findings
+      and highlighting service issues for business teams.
+    </p>
+    <div class="project-tags">
+      <span>CATI / NPS</span>
+      <span>Vendor Selection</span>
+      <span>GDPR Awareness</span>
+    </div>
+  </div>
+  <span class="project-cta">View case study →</span>
+</a>
+
+
+
+<a class="project-card project-link" href="projects/business-it-collaboration.html">
+  <div class="project-number">05</div>
+  <div>
+    <p class="project-category">Business Analysis / IT Collaboration / UAT</p>
+    <h3>Business–IT Collaboration</h3>
+    <p class="project-description">
+      Representing Sales in product launches and e-booking projects,
+      participating in UAT, aligning solutions with customer needs
+      and organising training for sales representatives.
+    </p>
+    <div class="project-tags">
+      <span>Business–IT</span>
+      <span>UAT</span>
+      <span>Sales Training</span>
+    </div>
+  </div>
+  <span class="project-cta">View case study →</span>
+</a>
+
+<a class="project-card project-link" href="projects/lead-generation.html">
+  <div class="project-number">06</div>
+  <div>
+    <p class="project-category">Sales Enablement / Lead Generation / Reporting</p>
+    <h3>Accelerating Sales with Lead Generation</h3>
+    <p class="project-description">
+      Turned external company data into a structured prospecting process,
+      qualifying and distributing leads to Sales Support and building dashboards
+      to track lead outcomes and pipeline development.
+    </p>
+    <div class="project-tags">
+      <span>Lead Generation</span>
+      <span>CRM Process</span>
+      <span>SharePoint</span>
+      <span>Management Reporting</span>
+    </div>
+  </div>
+  <span class="project-cta">View case study →</span>
+</a>
+
+
+      </div>
+
+      <div class="note">
+        DEMO, only - not real-life data.
+      </div>
+    </div>
+  </section>
+
+  <div class="container bottom-nav">
+    <a class="back-link" href="index.html">
+      <span>←</span> Back to main portfolio
+    </a>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    Independent portfolio case studies · 2026
+  </div>
+</footer>
+</body>
+</html>
