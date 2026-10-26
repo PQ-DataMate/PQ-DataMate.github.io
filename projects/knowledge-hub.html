@@ -49,21 +49,11 @@ nav.container {
   font-weight: 800;
   letter-spacing: -0.4px;
   white-space: nowrap;
-  text-decoration: none;
 }
 
-/* Explicit logo colours */
-.logo .brand-golden {
-  color: #d8ad45 !important;
-}
-
-.logo .brand-rest {
-  color: #f5f5f5 !important;
-}
-
-.logo .brand-dev {
-  color: #888888 !important;
-}
+.logo .brand-golden { color: #d8ad45; }
+.logo .brand-rest { color: #f5f5f5; }
+.logo .brand-dev { color: #888; }
 
 .nav-right {
   display: flex;
@@ -98,4 +88,440 @@ nav.container {
   color: #999;
   font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+h1 {
+  font-size: clamp(40px, 7vw, 70px);
+  letter-spacing: -3px;
+  line-height: 1.06;
+  margin: 20px 0;
+}
+
+h1 span { color: #888; }
+
+.lead {
+  max-width: 700px;
+  color: #bbb;
+  font-size: 18px;
+}
+
+.status {
+  display: inline-block;
+  border: 1px solid #555;
+  color: #ccc;
+  padding: 5px 10px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+section {
+  border-top: 1px solid var(--line);
+  padding: 55px 0;
+}
+
+.section-label {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #888;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 30px;
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin: 10px 0 20px;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 0 0 8px;
+}
+
+p { color: var(--muted); }
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  background: var(--panel);
+  padding: 23px;
+}
+
+.card p {
+  font-size: 14px;
+  margin-bottom: 0;
+}
+
+.number {
+  color: #777;
+  font-size: 11px;
+  margin-bottom: 15px;
+}
+
+.steps {
+  display: grid;
+  gap: 0;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 45px 1fr;
+  gap: 15px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.step:last-child { border-bottom: 0; }
+
+.step-no {
+  color: #777;
+  font-size: 12px;
+  padding-top: 3px;
+}
+
+.step p {
+  font-size: 14px;
+  margin: 0;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.tags span {
+  border: 1px solid #393939;
+  padding: 6px 10px;
+  font-size: 11px;
+  color: #bbb;
+}
+
+.callout {
+  background: #111;
+  border: 1px solid var(--line);
+  padding: 24px;
+}
+
+.callout p {
+  margin-bottom: 0;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid #777;
+  padding: 10px 15px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.btn.primary {
+  background: white;
+  color: black;
+  border-color: white;
+}
+
+.btn:hover { opacity: 0.75; }
+
+.feedback-card {
+  background: #111;
+  border: 1px solid #353535;
+  padding: clamp(24px, 5vw, 42px);
+  margin-top: 24px;
+}
+
+.feedback-quote {
+  margin: 10px 0 22px;
+  padding: 0;
+  font-size: clamp(20px, 3vw, 29px);
+  line-height: 1.45;
+  letter-spacing: -0.5px;
+  font-weight: 600;
+  color: #f5f5f5;
+}
+
+.feedback-attribution {
+  border-top: 1px solid #353535;
+  padding-top: 16px;
+  color: #999;
+  font-size: 12px;
+}
+
+.portal-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid #353535;
+}
+
+.image-note {
+  color: #888;
+  font-size: 11px;
+  margin-top: 10px;
+}
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  color: #777;
+  font-size: 11px;
+}
+
+footer .container {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 650px) {
+  nav.container {
+    align-items: flex-start;
+    flex-direction: column;
+    position: relative;
+    padding: 14px 48px 14px 0;
+    gap: 12px;
+  }
+
+  .nav-right {
+    width: 100%;
+    justify-content: flex-start;
+    margin-left: 0;
+    gap: 12px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .nav-dog {
+    position: absolute;
+    right: 0;
+    top: 14px;
+    width: 36px;
+    height: 23px;
+  }
+
+  .hero { padding: 65px 0 45px; }
+  h1 { letter-spacing: -2px; }
+  .grid { grid-template-columns: 1fr; }
+  section { padding: 42px 0; }
+}
+</style>
+</head>
+
+<body>
+<header>
+  <nav class="container">
+    <a class="logo" href="../index.html"><span class="brand-golden">GOLDEN</span><span class="brand-rest">OPS</span><span class="brand-dev">.DEV</span></a>
+
+    <div class="nav-right">
+      <div class="nav-links" aria-label="Main navigation">
+        <a href="../index.html">Home</a>
+        <a href="../business-analysis.html">Projects</a>
+        <a href="../about.html">About</a>
+      </div>
+      <img class="nav-dog" src="../images/goldenops-dog.png" alt="GoldenOps golden retriever emblem" width="42" height="26">
+    </div>
+  </nav>
+</header>
+
+<main>
+  <div class="container hero">
+    <div class="kicker">01 / SharePoint / Knowledge Management</div>
+    <h1>Dynamics 365<br><span>Knowledge Hub.</span></h1>
+    <p class="lead">One place for users to find guidance, answers and business resources. Independently designed and built from concept to launch preparation.</p>
+
+    <div class="status">NEW</div>
+
+    <div class="tags">
+      <span>SharePoint</span>
+      <span>Dynamics 365</span>
+      <span>User feedback</span>
+      <span>Knowledge management</span>
+    </div>
+  </div>
+
+  <section>
+    <div class="container">
+      <div class="section-label">01 / The problem</div>
+      <h2>Useful knowledge needs a home.</h2>
+      <p>Dynamics 365 users needed a clear way to find instructions, answers to common questions, system updates and reporting resources. I decided to bring these materials together in one structured SharePoint portal.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-label">02 / My contribution</div>
+      <h2>From idea to implementation.</h2>
+
+      <div class="steps">
+        <div class="step">
+          <div class="step-no">01</div>
+          <div>
+            <h3>Gathered user feedback</h3>
+            <p>Asked users what they expected from a central knowledge resource and incorporated their suggestions into the solution.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">02</div>
+          <div>
+            <h3>Designed the portal</h3>
+            <p>Created the information structure, page layout and navigation to make key resources easier to find.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">03</div>
+          <div>
+            <h3>Wrote practical guides</h3>
+            <p>Created step-by-step instructions for common Dynamics 365 tasks and workflows.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">04</div>
+          <div>
+            <h3>Built an FAQ from real questions</h3>
+            <p>Used questions raised by users to shape the FAQ around their actual needs, rather than assumptions.</p>
+          </div>
+        </div>
+
+        <div class="step">
+          <div class="step-no">05</div>
+          <div>
+            <h3>Created the visual experience</h3>
+            <p>Developed the portal's visual assets and brought announcements, support information and reporting links together.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-label">PORTAL OVERVIEW</div>
+      <h2>A central place for everything.</h2>
+      <p>The knowledge hub brings together guides, FAQs, announcements and key resources in one place, with a simple and intuitive structure.</p>
+
+      <figure style="margin:28px 0 0;">
+        <img
+          class="portal-image"
+          src="../images/KnowledgeHubSS.png"
+          alt="Recreated example of the Dynamics 365 SharePoint Knowledge Hub. Original data and screenshots have been replaced to protect confidential information."
+          loading="lazy"
+        >
+        <figcaption class="image-note">
+          Note: This visual represents real, implemented business solutions. Original data and screenshots have been replaced with recreated examples to protect confidential information.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-label">03 / What it contains</div>
+      <h2>One portal. Practical resources.</h2>
+
+      <div class="grid">
+        <article class="card">
+          <div class="number">01</div>
+          <h3>Quick guides</h3>
+          <p>Step-by-step instructions for everyday Dynamics 365 tasks.</p>
+        </article>
+
+        <article class="card">
+          <div class="number">02</div>
+          <h3>FAQ</h3>
+          <p>Answers shaped by questions and feedback from users.</p>
+        </article>
+
+        <article class="card">
+          <div class="number">03</div>
+          <h3>Announcements &amp; support</h3>
+          <p>A central place for updates, important information and support resources.</p>
+        </article>
+
+        <article class="card">
+          <div class="number">04</div>
+          <h3>Dashboards &amp; reporting</h3>
+          <p>Navigation to relevant Dynamics 365 and Power BI resources.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-label">USER FEEDBACK / REAL EXPERIENCE</div>
+      <h2>What users say.</h2>
+
+      <div class="feedback-card">
+        <div style="font-size:36px; color:#777; line-height:1;">“</div>
+
+        <blockquote class="feedback-quote">
+          I've been using this tool for so long, but it's only thanks to you that I feel like I've really got to know it properly!
+        </blockquote>
+
+        <div class="feedback-attribution">
+          Anonymous user feedback · Dynamics 365
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-label">04 / Business objective</div>
+      <h2>Make information easier to find.</h2>
+
+      <div class="callout">
+        <p>The goal is to give users a central source of guidance, support self-service learning and make business knowledge more accessible in everyday work.</p>
+      </div>
+
+      <p style="font-size:12px">The portal was prepared for publication at the time this case study was written. No measured adoption or efficiency results are claimed.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-label">05 / The approach</div>
+      <h2>Less Talk. More Impact.</h2>
+      <p>I gathered feedback, built the structure, created the content and developed the portal myself. The focus was on a useful solution shaped around what users actually needed.</p>
+
+      <div class="actions">
+        <a class="btn primary" href="../index.html#work">← Back to all projects</a>
+        <a class="btn" href="../index.html">Portfolio home</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <span>© 2026 GoldenOps.dev</span>
+    <span>Less presentation. More implementation.</span>
+  </div>
+</footer>
+</body>
+</html>
