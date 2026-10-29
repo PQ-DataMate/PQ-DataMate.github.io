@@ -328,6 +328,31 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: #777; font-s
 .contact-email a { color: #f5f5f5; text-decoration: underline; text-underline-offset: 3px; }
 @media(max-width: 600px) { .contact-form .form-row { grid-template-columns: 1fr; } }
 
+
+/* Compact competency tags at the bottom of the page */
+.footer-competencies {
+  border-top: 1px solid var(--line);
+  padding: 12px 0;
+  color: #fff;
+  font-size: 11px;
+  line-height: 1.6;
+  text-align: center;
+  letter-spacing: .1px;
+}
+.footer-competencies .tag-separator {
+  color: #777;
+  padding: 0 7px;
+}
+@media (max-width: 760px) {
+  .footer-competencies {
+    padding: 10px 0;
+    font-size: 10px;
+  }
+  .footer-competencies .tag-separator {
+    padding: 0 4px;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -629,6 +654,11 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; color: #777; font-s
   </div>
 </section>
 </main>
+
+
+<div class="footer-competencies" aria-label="Core competencies">
+  CRM Admin<span class="tag-separator">·</span>1st Line Support<span class="tag-separator">·</span>User Onboarding<span class="tag-separator">·</span>Dynamics 365<span class="tag-separator">·</span>SharePoint<span class="tag-separator">·</span>Process Improvement
+</div>
 
 <footer>
   <div class="container footer-inner">
